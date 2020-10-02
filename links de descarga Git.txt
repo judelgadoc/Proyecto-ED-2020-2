@@ -3,5 +3,6 @@ https://git-scm.com/
 https://desktop.github.com/
 
 
-commit
-pull
+commit: hacer cambio en el repositorio local
+push:   subier los cambios al repositorio en la web GitHub
+pull:	descargar nuevos cambios del repositorio
