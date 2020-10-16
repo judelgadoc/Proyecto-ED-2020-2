@@ -9,6 +9,14 @@ package icfes_proJect;
  *
  * @author judelgadoc
  */
-public class Node {
-    
+public class Node<T> {
+    public T data;
+    public Node next;
+    public Node prev;
+
+    public Node(T newData) {
+        data = newData;
+        next = null;
+        prev = null;
+    }
 }
