@@ -35,14 +35,16 @@ public class DoublyLinkedList<T> {
         if (tail == null)
             tail = head;
     }
-    public T popFront () {
+    public T popFront ()throws RuntimeException {
         if (head == null)
             throw new RuntimeException("List is empty");
         T ans = head.data;
         head = head.next;
-        head.next.prev = head;
-        if (head == null)
+        if (head == null){
             tail = null;
+        }else if (head.next != null){
+            head.next.prev = head;    
+        }
         return ans;
     }
     public void pushBack(T newData) {
@@ -56,7 +58,7 @@ public class DoublyLinkedList<T> {
             tail = newNode;
         }
     }
-    public T popBack() {
+    public T popBack()throws RuntimeException {
         T ans = null;
         if (head == null)
             throw new RuntimeException("List is empty");
@@ -117,5 +119,12 @@ public class DoublyLinkedList<T> {
             System.out.print(p.data + " ");
             printR(p.next);
         }
+    }
+    //agregar ///////////////////////////////////////////
+    public Node getHead(){
+        return this.head;
+    }
+    public Node getTail(){
+        return this.tail;
     }
 }
