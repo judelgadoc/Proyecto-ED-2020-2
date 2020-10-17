@@ -72,24 +72,32 @@ public class DoublyLinkedList<T> {
         return ans;
     }
     public void addAfter(Node node, T newData) {
-        Node<T> newNode = new Node<T>(newData);
-        newNode.next = node.next;
-        newNode.prev = node;
-        node.next = newNode;
-        if (newNode.next != null)
-            newNode.next.prev = newNode;
-        if (tail == node)
-            tail = newNode;
+        if (node == null)
+            pushBack(newData);
+        else {
+            Node<T> newNode = new Node<T>(newData);
+            newNode.next = node.next;
+            newNode.prev = node;
+            node.next = newNode;
+            if (newNode.next != null)
+                newNode.next.prev = newNode;
+            if (tail == node)
+                tail = newNode;
+        }
     }
     public void addBefore(Node node, T newData){
-        Node<T> newNode = new Node<T>(newData);
-        newNode.next = node;
-        newNode.prev = node.prev;
-        node.prev = newNode;
-        if (newNode.prev != null)
-            newNode.prev.next = newNode;
-        if (head == node)
-            head = newNode;
+        if (node == null || node == head)
+            pushFront(newData);
+        else {
+            Node<T> newNode = new Node<T>(newData);
+            newNode.next = node;
+            newNode.prev = node.prev;
+            node.prev = newNode;
+            if (newNode.prev != null)
+                newNode.prev.next = newNode;
+            if (head == node)
+                head = newNode;
+        }
     }
     public boolean isEmpty(){
         return head == null;

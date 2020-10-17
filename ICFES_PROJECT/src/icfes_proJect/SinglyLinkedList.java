@@ -64,19 +64,27 @@ public class SinglyLinkedList<T> {
         return ans;
     }
     public void addAfter(Node node, T newData) {
-        Node<T> newNode = new Node<T>(newData);
-        newNode.next = node.next;
-        node.next = newNode;
-        if (tail == node)
-            tail = newNode;
+        if (node == null)
+            pushBack(newData);
+        else {
+            Node<T> newNode = new Node<T>(newData);
+            newNode.next = node.next;
+            node.next = newNode;
+            if (tail == node)
+                tail = newNode;
+        }
     }
     public void addBefore(Node node, T newData){
-        Node<T> newNode = new Node<T>(newData);
-        Node<T> ref = head;
-        while (ref.next != node)
-            ref = ref.next;
-        newNode.next = ref.next;
-        ref.next = newNode;
+        if (node == null || node == head)
+            pushFront(newData);
+        else {
+            Node<T> newNode = new Node<T>(newData);
+            Node<T> ref = head;
+            while (ref.next != node)
+                ref = ref.next;
+            newNode.next = ref.next;
+            ref.next = newNode;
+        }
     }
     public boolean isEmpty(){
         return head == null;
