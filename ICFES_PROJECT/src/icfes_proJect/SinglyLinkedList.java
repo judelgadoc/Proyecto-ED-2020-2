@@ -107,4 +107,11 @@ public class SinglyLinkedList<T> {
             printR(p.next);
         }
     }
+    
+    public Node getHead(){
+        return this.head;
+    }
+    public Node getTail(){
+        return this.tail;
+    }
 }
