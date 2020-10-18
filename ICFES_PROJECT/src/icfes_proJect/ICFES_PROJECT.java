@@ -317,7 +317,7 @@ public class ICFES_PROJECT {
         Queue_using_SinglyLinkedList<String[]> queueSingly;
         Stack_using_arrays stackArray;
         queue_using_arrays queueArray;
-        int[] test = {40};//,400,4000,40000,400000,549934};
+        int[] test = {40,400,4000,40000,400000,549934};
         String data = "SB11201820060253";
         Pruebas p = new Pruebas();
         for(int i: test){
