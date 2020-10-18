@@ -64,47 +64,32 @@ public class Pruebas {
         System.out.println(text);
         list.pushFront(popped);
     }
-    public void SinglyAddAfter(int numOfLines) {//recibe dos nodos o datos, uno es referencia y el otro se adiciona antes del primero
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void SinglyAddAfter(int index, String dato, SinglyLinkedList list, String[] dataIn) {//recibe dos nodos o datos, uno es referencia y el otro se adiciona antes del primero
+        // index indice don del arreglo donde se budca el dato,  data in, nuevo arreglo a ingresar
         long startTime, stopTime;
         String text;
+        Node nodo = list.findNodo(index,dato);
         startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.addAfter(list.head, reader.returnString());
+        list.addAfter(nodo, dataIn);
         stopTime = System.nanoTime();
-        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addAfter", numOfLines, (stopTime - startTime)/1e9);
+        text = String.format("Tiempo de %s para indice 4 datos, en segundos: %s", "addAfter",  (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para adicionar despues" + " es: " + (stopTime - startTime));
+        System.out.println(text);
+    }
+    public void SinglyAddBefore(int index, String dato, SinglyLinkedList list, String[] dataIn) {//recibe dos nodos o datos, uno es referencia el otro se adiciona despues de la referencia
+        long startTime, stopTime;
+        String text;
+        Node nodo = list.findNodo(index,dato);
+        startTime = System.nanoTime();
+        list.addBefore(nodo, dataIn);
+        stopTime = System.nanoTime();
+        text = String.format("Tiempo de %s para adiconar antes, en segundos: %s", "addBefore", (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
-    public void SinglyAddBefore(int numOfLines) {//recibe dos nodos o datos, uno es referencia el otro se adiciona despues de la referencia
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void SinglyInsertMitad(SinglyLinkedList list, String[] data) {
         long startTime, stopTime;
         String text;
-        startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.addBefore(list.head, reader.returnString());
-        stopTime = System.nanoTime();
-        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addBefore", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
-        System.out.println(text);
-        reader.close();
-    }
-    public void SinglyInsertMitad(int numOfLines) {
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
-        long startTime, stopTime;
-        String text;
-        Node middle = list.tail;
-        String[] data;
-        for (int i = 0; i < numOfLines-1; i++) {
-            data = reader.returnString();
-            list.pushFront(data);
-            if (i == numOfLines/2)
-                middle = list.tail;
-        }
         startTime = System.nanoTime();
         list.addBefore(middle, reader.returnString());
         stopTime = System.nanoTime();
@@ -113,27 +98,16 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void SinglyFind(int numOfLines, String data) {//debe recibir el dato a buscar
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void SinglyFind(int index, String data, SinglyLinkedList list) {//debe recibir el dato a buscar
         long startTime, stopTime;
         String text; 
         //String data = "SB11201820548618";
-        int idx = new Titles().getIndexOf("ESTU_CONSECUTIVO");
-        String[] temp;
-        for (int i = 0; i < numOfLines; i++) {
-            temp = reader.returnString();
-            if (i == numOfLines/2)
-                data = temp[idx];
-            list.pushFront(temp);
-        }
         startTime = System.nanoTime();
-        list.find(idx, data);
+        list.find(index, data);
         stopTime = System.nanoTime();
-        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "find (mitad)", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
+        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "find (mitad)", index, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para encontrar elemento es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
     public void SinglyDelete(int numOfLines, SinglyLinkedList list) {
         long startTime, stopTime;

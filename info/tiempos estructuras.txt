@@ -319,14 +319,31 @@ Tiempo de addBefore (mitad) para 40000 datos, en segundos: 0.0027993
 Tiempo en nanosegundos para 40000 es: 1476900
 Tiempo de delete (mitad) para 40000 datos, en segundos: 0.0014769
 
----------------------Test con 13748350 elementos--------------------------------
+---------------------Test con 10000000 elementos--------------------------------
 ================Singly-Linked List================
-Tiempo en crea lista push back nanosegundos para 549934 es: 6747888600
-Tiempo de pushBack para 549934 datos, en segundos: 6.7478886
-Tiempo en nanosegundos para 549934 es: 42154300
-Tiempo de popFront para 549934 datos, en segundos: 0.0421543
-Tiempo en crear lista push fornt en nanosegundos para 549934 es: 4877442600
-Tiempo de pushFront para 549934 datos, en segundos: 4.8774426
+Tiempo en crear lista push back nanosegundos para 400000 es: 6760988200
+Tiempo de pushBack para 400000 datos, en segundos: 6.7609882
+Tiempo en nanosegundos para 400000 es: 40410000
+Tiempo de popBack (uno) para 400000 datos, en segundos: 0.04041
+Tiempo en nanosegundos para 400000 es: 1900
+Tiempo de popFront (uno) para 400000 datos, en segundos: 1.9E-6
+Tiempo en nanosegundos para 400000 es: 49651000
+Tiempo de sort para 400000 datos, en segundos: 0.049651
+Tiempo en crear lista push front en nanosegundos para 400000 es: 6497758200
+Tiempo de pushFront para 400000 datos, en segundos: 6.4977582
+Tiempo en nanosegundos para 400000 es: 2400010500
+Tiempo de addAfter para 400000 datos, en segundos: 2.4000105
+Tiempo en nanosegundos para 400000 es: 5189183900
+Tiempo de addBefore para 400000 datos, en segundos: 5.1891839
+Tiempo en nanosegundos para 400000 es: 21657600
+Tiempo de find (mitad) para 400000 datos, en segundos: 0.0216576
+Tiempo en nanosegundos para 400000 es: 32144600
+Tiempo de addBefore (mitad) para 400000 datos, en segundos: 0.0321446
+Tiempo en nanosegundos para 400000 es: 18813900
+Tiempo de delete (mitad) para 400000 datos, en segundos: 0.0188139
+
+
+
 
 
 

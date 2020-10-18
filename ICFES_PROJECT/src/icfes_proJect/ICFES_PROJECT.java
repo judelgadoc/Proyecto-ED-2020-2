@@ -322,9 +322,10 @@ public class ICFES_PROJECT {
         Queue_using_SinglyLinkedList<String[]> queueSingly;
         Stack_using_arrays stackArray;
         queue_using_arrays queueArray;
-        int[] test = {40000};//40,400,4000,40000,400000,549934
+        int[] test = {549934};//40,400,4000,40000,400000,549934
         String data = "SB11201820060253";
         Pruebas p = new Pruebas();
+        /*
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
                     + "elementos--------------------------------");
@@ -389,7 +390,7 @@ public class ICFES_PROJECT {
             queueArray = createQueueArray(i);
             deleteQueueArray(queueArray);
         }       
-          
+        */  
          pasarGarbageColector();   
        
         SinglyLinkedList list;
@@ -403,18 +404,19 @@ public class ICFES_PROJECT {
             p.SinglyPopBack(numOfLines,list);
             p.SinglyPopFront(numOfLines, list);
             p.SinglySort(numOfLines, list);
+            list = null;
             pasarGarbageColector();
             list = p.SinglyPushFront(numOfLines);
-            p.SinglyAddAfter(numOfLines);
-            p.SinglyAddBefore(numOfLines);
-            p.SinglyFind(numOfLines,data);
-            p.SinglyInsertMitad(numOfLines);
-            p.SinglyDelete(numOfLines, list);
+            //p.SinglyAddAfter(numOfLines);//lista, y dato o nodo
+            //p.SinglyAddBefore(numOfLines);//lista y dato o nodo
+            //p.SinglyFind(numOfLines,data);//lista
+            //p.SinglyInsertMitad(numOfLines);//lista y o el dato, o nodo
+            //p.SinglyDelete(numOfLines, list);// lita y el dato a eliminar
             
         }
         
         pasarGarbageColector();
-        
+        /*
         DoublyLinkedList list2;
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
@@ -433,7 +435,7 @@ public class ICFES_PROJECT {
             p.DoublyInsertMitad(numOfLines);
             p.DoublyDelete(numOfLines, list2);
         }
-        
+        */
        
       
     }

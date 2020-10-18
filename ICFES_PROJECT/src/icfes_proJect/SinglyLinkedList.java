@@ -109,6 +109,38 @@ public class SinglyLinkedList<T> {
         }
         return count;
     }
+    public Node findNodo(int idx, String key) {
+        Node ref = head;
+        boolean foundFlag = false;
+        String[] temp;
+        int count = 0;
+        while (ref.next != null && !foundFlag) {
+            temp = (String[]) ref.data;
+            foundFlag = temp[idx].equals(key);
+            ref = ref.next;
+            count++;
+        }
+        return ref;
+    }
+    /*
+    public void addAfter(int idx, T dataIn, String dataRef){
+        Node node = findNodo(idx,dataRef);
+        Node nodeIn = new Node(dataIn);
+        Node aux = node;
+        nodeIn = aux.next;
+        node.next = nodeIn;  
+    }*/
+    
+     public void addBefore(int idx, T dataIn, String dataRef){
+        Node node = findNodo(idx,dataRef);
+        Node nodeIn = new Node(dataIn);
+        Node aux = node;
+        nodeIn = aux.next;
+        node.next = nodeIn;  
+    }
+    
+    
+    
     public void delete(int position) {
         if (position == 0)
             popFront();
