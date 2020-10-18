@@ -20,6 +20,7 @@ public class Pruebas {
             list.pushBack(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushBack", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -35,6 +36,7 @@ public class Pruebas {
             list.popBack();
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popBack", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -48,6 +50,7 @@ public class Pruebas {
             list.pushFront(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushFront", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -63,6 +66,7 @@ public class Pruebas {
             list.popFront();
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popFront", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -76,6 +80,7 @@ public class Pruebas {
             list.addAfter(list.head, reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addAfter", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -89,6 +94,7 @@ public class Pruebas {
             list.addBefore(list.head, reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addBefore", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -109,6 +115,7 @@ public class Pruebas {
         list.addBefore(middle, reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addBefore (mitad)", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -130,6 +137,7 @@ public class Pruebas {
         list.find(idx, data);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "find (mitad)", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -145,6 +153,7 @@ public class Pruebas {
         list.delete(numOfLines/2);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "delete (mitad)", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -160,6 +169,7 @@ public class Pruebas {
         list.sort(4);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "sort", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -173,6 +183,7 @@ public class Pruebas {
             list.pushBack(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushBack", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -188,6 +199,7 @@ public class Pruebas {
             list.popBack();
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popBack", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -201,6 +213,7 @@ public class Pruebas {
             list.pushFront(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushFront", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -216,6 +229,7 @@ public class Pruebas {
             list.popFront();
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popFront", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -229,6 +243,7 @@ public class Pruebas {
             list.addAfter(list.head, reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addAfter", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -242,6 +257,7 @@ public class Pruebas {
             list.addBefore(list.head, reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addBefore", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -262,6 +278,7 @@ public class Pruebas {
         list.addBefore(middle, reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "addBefore (mitad)", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -283,6 +300,7 @@ public class Pruebas {
         list.find(idx, data);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "find (mitad)", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -298,6 +316,7 @@ public class Pruebas {
         list.delete(numOfLines/2);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "delete (mitad)", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
@@ -313,6 +332,7 @@ public class Pruebas {
         list.sort(4);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "sort", numOfLines, (stopTime - startTime)/1e9);
+        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
     }
