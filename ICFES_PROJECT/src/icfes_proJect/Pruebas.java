@@ -11,7 +11,7 @@ package icfes_proJect;
  */
 public class Pruebas {
     
-    public SinglyLinkedList SinglyPushBack(int numOfLines) {
+    public SinglyLinkedList SinglyPushBack(int numOfLines) { // full
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -21,24 +21,24 @@ public class Pruebas {
             list.pushBack(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushBack", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en crea lista push back nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
+        System.out.println("Tiempo en crear lista push back nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
         return list;
     }
-    public void SinglyPopBack(int numOfLines, SinglyLinkedList list) {
+    public void SinglyPopBack(int numOfLines, SinglyLinkedList list) { // Solo cuenta pero no modifica (vuelve a pushdespués de contar)
         long startTime, stopTime;
         String text;
         startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.popBack();
+        String[] popped = (String[]) list.popBack();
         stopTime = System.nanoTime();
-        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popBack", numOfLines, (stopTime - startTime)/1e9);
+        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popBack (uno)", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
+        list.pushBack(popped);
     }
     
-    public SinglyLinkedList SinglyPushFront(int numOfLines) {
+    public SinglyLinkedList SinglyPushFront(int numOfLines) { //full
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -48,21 +48,21 @@ public class Pruebas {
             list.pushFront(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushFront", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en crear lista push fornt en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
+        System.out.println("Tiempo en crear lista push front en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
         return list;
     }
-    public void SinglyPopFront(int numOfLines, SinglyLinkedList list) {
+    public void SinglyPopFront(int numOfLines, SinglyLinkedList list) { // Solo cuenta pero no modifica (vuelve a push después de contar)
         long startTime, stopTime;
         String text;
         startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.popFront();
+        String[] popped = (String[]) list.popFront();
         stopTime = System.nanoTime();
-        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popFront", numOfLines, (stopTime - startTime)/1e9);
+        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popFront (uno)", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
+        list.pushFront(popped);
     }
     public void SinglyAddAfter(int numOfLines) {//recibe dos nodos o datos, uno es referencia y el otro se adiciona antes del primero
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
@@ -99,7 +99,7 @@ public class Pruebas {
         String text;
         Node middle = list.tail;
         String[] data;
-        for (int i = 0; i < numOfLines; i++) {
+        for (int i = 0; i < numOfLines-1; i++) {
             data = reader.returnString();
             list.pushFront(data);
             if (i == numOfLines/2)
@@ -113,7 +113,7 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void SinglyFind(int numOfLines,String data) {//debe recibir el dato a buscar
+    public void SinglyFind(int numOfLines, String data) {//debe recibir el dato a buscar
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -135,39 +135,27 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void SinglyDelete(int numOfLines) {
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void SinglyDelete(int numOfLines, SinglyLinkedList list) {
         long startTime, stopTime;
         String text;
-        startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
         list.delete(numOfLines/2);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "delete (mitad)", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
-    public void SinglySort(int numOfLines) {
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void SinglySort(int numOfLines,SinglyLinkedList list) {
         long startTime, stopTime;
         String text;
-        startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
         list.sort(4);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "sort", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
-    public void DoublyPushBack(int numOfLines) {
+    public DoublyLinkedList DoublyPushBack(int numOfLines) { // full
         DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -177,27 +165,24 @@ public class Pruebas {
             list.pushBack(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushBack", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
+        System.out.println("Tiempo en crear lista push back nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
+        return list;
     }
-    public void DoublyPopBack(int numOfLines) {
-        DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void DoublyPopBack(int numOfLines, DoublyLinkedList list) { // Solo cuenta pero no modifica (vuelve a pushdespués de contar)
         long startTime, stopTime;
         String text;
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.popBack();
+        String[] popped = (String[]) list.popBack();
         stopTime = System.nanoTime();
-        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popBack", numOfLines, (stopTime - startTime)/1e9);
+        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popBack (uno)", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
+        list.pushBack(popped);
     }
-    public void DoublyPushFront(int numOfLines) {
+    
+    public DoublyLinkedList DoublyPushFront(int numOfLines) { //full
         DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -207,27 +192,23 @@ public class Pruebas {
             list.pushFront(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushFront", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
+        System.out.println("Tiempo en crear lista push front en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
+        return list;
     }
-    public void DoublyPopFront(int numOfLines) {
-        DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void DoublyPopFront(int numOfLines, DoublyLinkedList list) { // Solo cuenta pero no modifica (vuelve a push después de contar)
         long startTime, stopTime;
         String text;
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.popFront();
+        String[] popped = (String[]) list.popFront();
         stopTime = System.nanoTime();
-        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popFront", numOfLines, (stopTime - startTime)/1e9);
+        text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popFront (uno)", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
+        list.pushFront(popped);
     }
-    public void DoublyAddAfter(int numOfLines) {
+    public void DoublyAddAfter(int numOfLines) {//recibe dos nodos o datos, uno es referencia y el otro se adiciona antes del primero
         DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -241,7 +222,7 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void DoublyAddBefore(int numOfLines) {
+    public void DoublyAddBefore(int numOfLines) {//recibe dos nodos o datos, uno es referencia el otro se adiciona despues de la referencia
         DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -262,7 +243,7 @@ public class Pruebas {
         String text;
         Node middle = list.tail;
         String[] data;
-        for (int i = 0; i < numOfLines; i++) {
+        for (int i = 0; i < numOfLines-1; i++) {
             data = reader.returnString();
             list.pushFront(data);
             if (i == numOfLines/2)
@@ -276,12 +257,12 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void DoublyFind(int numOfLines) {
+    public void DoublyFind(int numOfLines, String data) {//debe recibir el dato a buscar
         DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
         String text; 
-        String data = "SB11201820548618";
+        //String data = "SB11201820548618";
         int idx = new Titles().getIndexOf("ESTU_CONSECUTIVO");
         String[] temp;
         for (int i = 0; i < numOfLines; i++) {
@@ -298,36 +279,24 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void DoublyDelete(int numOfLines) {
-        DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void DoublyDelete(int numOfLines, DoublyLinkedList list) {
         long startTime, stopTime;
         String text;
-        startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
         list.delete(numOfLines/2);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "delete (mitad)", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
-    public void DoublySort(int numOfLines) {
-        DoublyLinkedList<String[]> list = new DoublyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void DoublySort(int numOfLines,DoublyLinkedList list) {
         long startTime, stopTime;
         String text;
-        startTime = System.nanoTime();
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
         list.sort(4);
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "sort", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
 }

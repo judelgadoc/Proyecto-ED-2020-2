@@ -322,7 +322,7 @@ public class ICFES_PROJECT {
         Queue_using_SinglyLinkedList<String[]> queueSingly;
         Stack_using_arrays stackArray;
         queue_using_arrays queueArray;
-        int[] test = {549934};//40,400,4000,40000,400000,
+        int[] test = {40000};//40,400,4000,40000,400000,549934
         String data = "SB11201820060253";
         Pruebas p = new Pruebas();
         for(int i: test){
@@ -400,35 +400,38 @@ public class ICFES_PROJECT {
             int numOfLines = i;
             System.out.println("================Singly-Linked List================");
             list = p.SinglyPushBack(numOfLines);
-            //p.SinglyPopBack(numOfLines,list);
-            p.SinglyPopFront(numOfLines,list);
+            p.SinglyPopBack(numOfLines,list);
+            p.SinglyPopFront(numOfLines, list);
+            p.SinglySort(numOfLines, list);
             pasarGarbageColector();
             list = p.SinglyPushFront(numOfLines);
-            p.SinglySort(numOfLines);
             p.SinglyAddAfter(numOfLines);
             p.SinglyAddBefore(numOfLines);
             p.SinglyFind(numOfLines,data);
             p.SinglyInsertMitad(numOfLines);
-            p.SinglyDelete(numOfLines);
+            p.SinglyDelete(numOfLines, list);
             
         }
         
         pasarGarbageColector();
         
+        DoublyLinkedList list2;
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
                     + "elementos--------------------------------");
             int numOfLines = i;
             System.out.println("================Doubly-Linked List================");
-            p.DoublyPushBack(numOfLines);
-            p.DoublyPopBack(numOfLines);
-            p.DoublyPushFront(numOfLines);
+            list2 = p.DoublyPushBack(numOfLines);
+            p.DoublyPopBack(numOfLines,list2);
+            p.DoublyPopFront(numOfLines, list2);
+            p.DoublySort(numOfLines, list2);
+            pasarGarbageColector();
+            list2 = p.DoublyPushFront(numOfLines);
             p.DoublyAddAfter(numOfLines);
             p.DoublyAddBefore(numOfLines);
-            p.DoublyFind(numOfLines);
+            p.DoublyFind(numOfLines,data);
             p.DoublyInsertMitad(numOfLines);
-            p.DoublyDelete(numOfLines);
-            //p.DoublySort(numOfLines);
+            p.DoublyDelete(numOfLines, list2);
         }
         
        
