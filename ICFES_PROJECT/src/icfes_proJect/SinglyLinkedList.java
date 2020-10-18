@@ -12,6 +12,7 @@ package icfes_proJect;
 public class SinglyLinkedList<T> {
     public Node<T> head;
     public Node<T> tail;
+    public int size=0;
 
     public SinglyLinkedList() {
         head = null;
@@ -28,6 +29,7 @@ public class SinglyLinkedList<T> {
         head = newNode;
         if (tail == null)
             tail = head;
+        size++;
     }
     public T popFront () {
         if (head == null)
@@ -36,6 +38,7 @@ public class SinglyLinkedList<T> {
         head = head.next;
         if (head == null)
             tail = null;
+        size--;
         return ans;
     }
     public void pushBack(T newData) {
@@ -46,6 +49,7 @@ public class SinglyLinkedList<T> {
             tail.next = newNode;
             tail = newNode;
         }
+        size++;
     }
     public T popBack() {
         T ans = null;
@@ -61,6 +65,7 @@ public class SinglyLinkedList<T> {
             tail = ref;
             tail.next = null;
         }
+        size--;
         return ans;
     }
     public void addAfter(Node node, T newData) {
@@ -72,6 +77,7 @@ public class SinglyLinkedList<T> {
             node.next = newNode;
             if (tail == node)
                 tail = newNode;
+            size++;
         }
     }
     public void addBefore(Node node, T newData){
@@ -84,25 +90,38 @@ public class SinglyLinkedList<T> {
                 ref = ref.next;
             newNode.next = ref.next;
             ref.next = newNode;
+            size++;
         }
     }
     public boolean isEmpty(){
         return head == null;
     }
-    public boolean find(T key) {
-        Node<T> ref = head;
+    public int find(int idx, String key) {
+        Node ref = head;
         boolean foundFlag = false;
+        String[] temp;
+        int count = 0;
         while (ref.next != null && !foundFlag) {
-            foundFlag = ref.data == key;
+            temp = (String[]) ref.data;
+            foundFlag = temp[idx].equals(key);
             ref = ref.next;
+            count++;
         }
-        return foundFlag;
+        return count;
     }
-    public void delete(T key) {
-        Node<T> ref = head;
-        while (ref.next.data != key)
-            ref = ref.next;
-        ref.next = ref.next.next;
+    public void delete(int position) {
+        if (position == 0)
+            popFront();
+        else {
+            int n = 0;
+            Node ref = head;
+            while (n < position -1) {
+                ref = ref.next;
+                n++;
+            }
+            ref.next = ref.next.next;
+            size--;
+        }
     }
     public void print(){
         System.out.print("List recursive: ");
@@ -114,6 +133,41 @@ public class SinglyLinkedList<T> {
             System.out.print(p.data + " ");
             printR(p.next);
         }
+    }
+    public void modify(Node node, T data) {
+        node.data = data;
+    }
+    public void sort(int idx) {
+        // using BubbleSort
+        if(head.next != null&&head != null){
+            Node node1 = head;
+            Node node2 = head.next;
+            
+            for(int i = 0;i<size;i++) {  
+                while(node2!= null) {
+                    String[] temp1 = (String[]) node1.data;
+                    String[] temp2 = (String[]) node2.data;
+                    if (temp1[idx].compareTo(temp2[idx]) > 0) {
+                        if (node1 == head){
+                            head = node2;
+                        }
+                        String[] aux= (String[])node2.data;
+                        node2.data = node1.data;
+                        node1.data = aux;
+                    }   
+                    node1 = node1.next;
+                    node2 = node2.next;
+                  
+                }
+                node1 = head;
+                node2 = head.next;
+          }
+        }
+        /*Node aux = head;
+        while(aux != null){
+          System.out.println(((String[])aux.data)[4]);
+          aux = aux.next;
+        }*/
     }
     
     public Node getHead(){
