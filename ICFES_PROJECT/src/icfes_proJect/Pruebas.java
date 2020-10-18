@@ -10,7 +10,8 @@ package icfes_proJect;
  * @author jalco
  */
 public class Pruebas {
-        public void SinglyPushBack(int numOfLines) {
+    
+    public SinglyLinkedList SinglyPushBack(int numOfLines) {
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -20,17 +21,14 @@ public class Pruebas {
             list.pushBack(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushBack", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
+        System.out.println("Tiempo en crea lista push back nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
+        return list;
     }
-    public void SinglyPopBack(int numOfLines) {
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void SinglyPopBack(int numOfLines, SinglyLinkedList list) {
         long startTime, stopTime;
         String text;
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
         for (int i = 0; i < numOfLines; i++)
             list.popBack();
@@ -38,9 +36,9 @@ public class Pruebas {
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popBack", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
-    public void SinglyPushFront(int numOfLines) {
+    
+    public SinglyLinkedList SinglyPushFront(int numOfLines) {
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -50,17 +48,14 @@ public class Pruebas {
             list.pushFront(reader.returnString());
         stopTime = System.nanoTime();
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "pushFront", numOfLines, (stopTime - startTime)/1e9);
-        System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
+        System.out.println("Tiempo en crear lista push fornt en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
         reader.close();
+        return list;
     }
-    public void SinglyPopFront(int numOfLines) {
-        SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
-        paraleer reader = new paraleer(); 
+    public void SinglyPopFront(int numOfLines, SinglyLinkedList list) {
         long startTime, stopTime;
         String text;
-        for (int i = 0; i < numOfLines; i++)
-            list.pushFront(reader.returnString());
         startTime = System.nanoTime();
         for (int i = 0; i < numOfLines; i++)
             list.popFront();
@@ -68,9 +63,8 @@ public class Pruebas {
         text = String.format("Tiempo de %s para %s datos, en segundos: %s", "popFront", numOfLines, (stopTime - startTime)/1e9);
         System.out.println("Tiempo en nanosegundos para " + numOfLines + " es: " + (stopTime - startTime));
         System.out.println(text);
-        reader.close();
     }
-    public void SinglyAddAfter(int numOfLines) {
+    public void SinglyAddAfter(int numOfLines) {//recibe dos nodos o datos, uno es referencia y el otro se adiciona antes del primero
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -84,7 +78,7 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void SinglyAddBefore(int numOfLines) {
+    public void SinglyAddBefore(int numOfLines) {//recibe dos nodos o datos, uno es referencia el otro se adiciona despues de la referencia
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
@@ -119,12 +113,12 @@ public class Pruebas {
         System.out.println(text);
         reader.close();
     }
-    public void SinglyFind(int numOfLines) {
+    public void SinglyFind(int numOfLines,String data) {//debe recibir el dato a buscar
         SinglyLinkedList<String[]> list = new SinglyLinkedList<String[]>();
         paraleer reader = new paraleer(); 
         long startTime, stopTime;
         String text; 
-        String data = "SB11201820548618";
+        //String data = "SB11201820548618";
         int idx = new Titles().getIndexOf("ESTU_CONSECUTIVO");
         String[] temp;
         for (int i = 0; i < numOfLines; i++) {

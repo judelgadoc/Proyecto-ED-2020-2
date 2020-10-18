@@ -1,0 +1,450 @@
+---------------------Test con 1000 elementos--------------------------------
+Creacion pila en lista doblemente enlazada 2392800
+Busqueda pila Doblemente enlazada. Encontrado en:(nanosegundos) 26900
+Creacion pila en lista doblemente enlazada 862400
+Pila DoblementeEnlazada Eliminados en: 8100
+---------------------Test con 10000 elementos--------------------------------
+Creacion pila en lista doblemente enlazada 4284600
+Busqueda pila Doblemente enlazada. Encontrado en:(nanosegundos) 225200
+Creacion pila en lista doblemente enlazada 3039000
+Pila DoblementeEnlazada Eliminados en: 67400
+---------------------Test con 100000 elementos--------------------------------
+Creacion pila en lista doblemente enlazada 21770600
+Busqueda pila Doblemente enlazada. Encontrado en:(nanosegundos) 1426800
+Creacion pila en lista doblemente enlazada 10835500
+Pila DoblementeEnlazada Eliminados en: 337200
+---------------------Test con 1000000 elementos--------------------------------
+Creacion pila en lista doblemente enlazada 86444400
+Busqueda pila Doblemente enlazada. Encontrado en:(nanosegundos) 7021100
+Creacion pila en lista doblemente enlazada 376965000
+Pila DoblementeEnlazada Eliminados en: 3174400
+---------------------Test con 10000000 elementos--------------------------------
+Creacion pila en lista doblemente enlazada 2009572500
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Busqueda pila Doblemente enlazada. Encontrado en:(nanosegundos) 43627800
+Creacion pila en lista doblemente enlazada 3374140700
+Pila DoblementeEnlazada Eliminados en: 40879700
+---------------------Test con 13748350 elementos--------------------------------
+Creacion pila en lista doblemente enlazada 3861092900
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Busqueda pila Doblemente enlazada. Encontrado en:(nanosegundos) 47785200
+Creacion pila en lista doblemente enlazada 1913533300
+Pila DoblementeEnlazada Eliminados en: 50101300
+---------------------Test con 1000 elementos--------------------------------
+Creacion cola en lista doblemente enlazada (nanosegundos)750900
+Busqueda cola doblemente enlazada. Encontrado en(milisegundos): 0
+Creacion cola en lista doblemente enlazada (nanosegundos)110100
+Cola doblemente Enlazada Eliminados en(nanosegundos): 2700
+---------------------Test con 10000 elementos--------------------------------
+Creacion cola en lista doblemente enlazada (nanosegundos)667600
+Busqueda cola doblemente enlazada. Encontrado en(milisegundos): 0
+Creacion cola en lista doblemente enlazada (nanosegundos)628600
+Cola doblemente Enlazada Eliminados en(nanosegundos): 19100
+---------------------Test con 100000 elementos--------------------------------
+Creacion cola en lista doblemente enlazada (nanosegundos)5090600
+Busqueda cola doblemente enlazada. Encontrado en(milisegundos): 0
+Creacion cola en lista doblemente enlazada (nanosegundos)5054900
+Cola doblemente Enlazada Eliminados en(nanosegundos): 363600
+---------------------Test con 1000000 elementos--------------------------------
+Creacion cola en lista doblemente enlazada (nanosegundos)50413300
+Busqueda cola doblemente enlazada. Encontrado en(milisegundos): 0
+Creacion cola en lista doblemente enlazada (nanosegundos)275691700
+Cola doblemente Enlazada Eliminados en(nanosegundos): 3647200
+---------------------Test con 10000000 elementos--------------------------------
+Creacion cola en lista doblemente enlazada (nanosegundos)1656982000
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Busqueda cola doblemente enlazada. Encontrado en(milisegundos): 48
+Creacion cola en lista doblemente enlazada (nanosegundos)1685240500
+Cola doblemente Enlazada Eliminados en(nanosegundos): 32171600
+---------------------Test con 13748350 elementos--------------------------------
+Creacion cola en lista doblemente enlazada (nanosegundos)1929315700
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Busqueda cola doblemente enlazada. Encontrado en(milisegundos): 47
+Creacion cola en lista doblemente enlazada (nanosegundos)1862221000
+Cola doblemente Enlazada Eliminados en(nanosegundos): 41739100
+---------------------Test con 1000 elementos--------------------------------
+Creación de pila simplemente enlazada 1236900
+Encontrado en pila simplemente enlazada en : 17700
+Creación de pila simplemente enlazada 88300
+Desapilados de pila simplemente enlazada en: 9000
+---------------------Test con 10000 elementos--------------------------------
+Creación de pila simplemente enlazada 745400
+Encontrado en pila simplemente enlazada en : 132800
+Creación de pila simplemente enlazada 723500
+Desapilados de pila simplemente enlazada en: 62400
+---------------------Test con 100000 elementos--------------------------------
+Creación de pila simplemente enlazada 5175000
+Encontrado en pila simplemente enlazada en : 977600
+Creación de pila simplemente enlazada 5427200
+Desapilados de pila simplemente enlazada en: 458700
+---------------------Test con 1000000 elementos--------------------------------
+Creación de pila simplemente enlazada 61528400
+Encontrado en pila simplemente enlazada en : 10817400
+Creación de pila simplemente enlazada 53232200
+Desapilados de pila simplemente enlazada en: 2872500
+---------------------Test con 10000000 elementos--------------------------------
+Creación de pila simplemente enlazada 1055466000
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Encontrado en pila simplemente enlazada en : 38364200
+Creación de pila simplemente enlazada 1941345900
+Desapilados de pila simplemente enlazada en: 28617700
+---------------------Test con 13748350 elementos--------------------------------
+Creación de pila simplemente enlazada 2682658800
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Encontrado en pila simplemente enlazada en : 44336300
+Creación de pila simplemente enlazada 2446213500
+Desapilados de pila simplemente enlazada en: 39159100
+---------------------Test con 1000 elementos--------------------------------
+Creacion  de cola simplemente enlazada:684000
+Encontrado en cola simplemente enlazada: 11500
+Creacion  de cola simplemente enlazada:98400
+Desencolar de cola simplemente enlazada: 2800
+---------------------Test con 10000 elementos--------------------------------
+Creacion  de cola simplemente enlazada:706900
+Encontrado en cola simplemente enlazada: 108900
+Creacion  de cola simplemente enlazada:614000
+Desencolar de cola simplemente enlazada: 20600
+---------------------Test con 100000 elementos--------------------------------
+Creacion  de cola simplemente enlazada:5327400
+Encontrado en cola simplemente enlazada: 1049000
+Creacion  de cola simplemente enlazada:4937700
+Desencolar de cola simplemente enlazada: 438200
+---------------------Test con 1000000 elementos--------------------------------
+Creacion  de cola simplemente enlazada:50066600
+Encontrado en cola simplemente enlazada: 9271000
+Creacion  de cola simplemente enlazada:67472500
+Desencolar de cola simplemente enlazada: 2964500
+---------------------Test con 10000000 elementos--------------------------------
+Creacion  de cola simplemente enlazada:1021183500
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Encontrado en cola simplemente enlazada: 42327800
+Creacion  de cola simplemente enlazada:1186382000
+Desencolar de cola simplemente enlazada: 29293200
+---------------------Test con 13748350 elementos--------------------------------
+Creacion  de cola simplemente enlazada:2034532700
+[TI, COLOMBIA, M, 12/12/2001, SB11201820060253, , CALDAS, MANIZALES, Estrato 3, 11 A 25 LIBROS, Igual, Más de 2 horas, 91538, COL. CULTURAL ANDINO, MIXTO, NO OFICIAL, MAÑANA, 52, 53, 51, 56, 55.0, A1, 266, 63, NSE3]
+Encontrado en cola simplemente enlazada: 43033900
+Creacion  de cola simplemente enlazada:2447970500
+Desencolar de cola simplemente enlazada: 38568900
+---------------------Test con 1000 elementos--------------------------------
+Creacion pila en arreglo en(nanosegundos): 769900
+Busqueda pila en arreglo. Tiempo de ejecución en nanosegundos: 7800
+Busqueda pila en arreglo Tiempo de ejecución en segundos: 7.8E-6
+Creacion pila en arreglo en(nanosegundos): 176700
+pila eliminacion Tiempo de ejecución en nanosegundos: 3800
+pila eliminacion Tiempo de ejecución en segundos: 3.8E-6
+---------------------Test con 10000 elementos--------------------------------
+Creacion pila en arreglo en(nanosegundos): 665700
+Busqueda pila en arreglo. Tiempo de ejecución en nanosegundos: 156600
+Busqueda pila en arreglo Tiempo de ejecución en segundos: 1.566E-4
+Creacion pila en arreglo en(nanosegundos): 626500
+pila eliminacion Tiempo de ejecución en nanosegundos: 11200
+pila eliminacion Tiempo de ejecución en segundos: 1.12E-5
+---------------------Test con 100000 elementos--------------------------------
+Creacion pila en arreglo en(nanosegundos): 5234000
+Busqueda pila en arreglo. Tiempo de ejecución en nanosegundos: 687900
+Busqueda pila en arreglo Tiempo de ejecución en segundos: 6.879E-4
+Creacion pila en arreglo en(nanosegundos): 5352800
+pila eliminacion Tiempo de ejecución en nanosegundos: 133600
+pila eliminacion Tiempo de ejecución en segundos: 1.336E-4
+---------------------Test con 1000000 elementos--------------------------------
+Creacion pila en arreglo en(nanosegundos): 53356000
+Busqueda pila en arreglo. Tiempo de ejecución en nanosegundos: 10692100
+Busqueda pila en arreglo Tiempo de ejecución en segundos: 0.0106921
+Creacion pila en arreglo en(nanosegundos): 50958700
+pila eliminacion Tiempo de ejecución en nanosegundos: 886700
+pila eliminacion Tiempo de ejecución en segundos: 8.867E-4
+---------------------Test con 10000000 elementos--------------------------------
+Creacion pila en arreglo en(nanosegundos): 1234914200
+Busqueda pila en arreglo. Tiempo de ejecución en nanosegundos: 13522600
+Busqueda pila en arreglo Tiempo de ejecución en segundos: 0.0135226
+Creacion pila en arreglo en(nanosegundos): 1094352900
+pila eliminacion Tiempo de ejecución en nanosegundos: 3239700
+pila eliminacion Tiempo de ejecución en segundos: 0.0032397
+---------------------Test con 13748350 elementos--------------------------------
+Creacion pila en arreglo en(nanosegundos): 2430002500
+Busqueda pila en arreglo. Tiempo de ejecución en nanosegundos: 24817600
+Busqueda pila en arreglo Tiempo de ejecución en segundos: 0.0248176
+Creacion pila en arreglo en(nanosegundos): 2664254900
+pila eliminacion Tiempo de ejecución en nanosegundos: 2963600
+pila eliminacion Tiempo de ejecución en segundos: 0.0029636
+---------------------Test con 1000 elementos--------------------------------
+Creacion pila en arreglo en: 763500
+cola encontrar Tiempo de ejecución en milisegundos: 9000
+cola encontrar Tiempo de ejecución en segundos: buscando 9.0E-6
+Creacion pila en arreglo en: 208900
+cola eliminacion Tiempo de ejecución en nanosegundos: 4800
+cola eliminacion Tiempo de ejecución en segundos: 4.8E-6
+---------------------Test con 10000 elementos--------------------------------
+Creacion pila en arreglo en: 699600
+cola encontrar Tiempo de ejecución en milisegundos: 101400
+cola encontrar Tiempo de ejecución en segundos: buscando 1.014E-4
+Creacion pila en arreglo en: 663800
+cola eliminacion Tiempo de ejecución en nanosegundos: 10900
+cola eliminacion Tiempo de ejecución en segundos: 1.09E-5
+---------------------Test con 100000 elementos--------------------------------
+Creacion pila en arreglo en: 5197800
+cola encontrar Tiempo de ejecución en milisegundos: 1000400
+cola encontrar Tiempo de ejecución en segundos: buscando 0.0010004
+Creacion pila en arreglo en: 5061000
+cola eliminacion Tiempo de ejecución en nanosegundos: 200200
+cola eliminacion Tiempo de ejecución en segundos: 2.002E-4
+---------------------Test con 1000000 elementos--------------------------------
+Creacion pila en arreglo en: 49892800
+cola encontrar Tiempo de ejecución en milisegundos: 7643400
+cola encontrar Tiempo de ejecución en segundos: buscando 0.0076434
+Creacion pila en arreglo en: 49952800
+cola eliminacion Tiempo de ejecución en nanosegundos: 901900
+cola eliminacion Tiempo de ejecución en segundos: 9.019E-4
+---------------------Test con 10000000 elementos--------------------------------
+Creacion pila en arreglo en: 2099648200
+cola encontrar Tiempo de ejecución en milisegundos: 20485300
+cola encontrar Tiempo de ejecución en segundos: buscando 0.0204853
+Creacion pila en arreglo en: 1337441300
+cola eliminacion Tiempo de ejecución en nanosegundos: 4457800
+cola eliminacion Tiempo de ejecución en segundos: 0.0044578
+---------------------Test con 13748350 elementos--------------------------------
+Creacion pila en arreglo en: 2268178400
+cola encontrar Tiempo de ejecución en milisegundos: 24625900
+cola encontrar Tiempo de ejecución en segundos: buscando 0.0246259
+Creacion pila en arreglo en: 2949250100
+cola eliminacion Tiempo de ejecución en nanosegundos: 4100200
+cola eliminacion Tiempo de ejecución en segundos: 0.0041002
+---------------------Test con 1000 elementos--------------------------------
+================Singly-Linked List================
+Tiempo en nanosegundos para 40 es: 143900
+Tiempo de pushBack para 40 datos, en segundos: 1.439E-4
+Tiempo en nanosegundos para 40 es: 13100
+Tiempo de popBack para 40 datos, en segundos: 1.31E-5
+Tiempo en nanosegundos para 40 es: 278200
+Tiempo de pushFront para 40 datos, en segundos: 2.782E-4
+Tiempo en nanosegundos para 40 es: 252200
+Tiempo de addAfter para 40 datos, en segundos: 2.522E-4
+Tiempo en nanosegundos para 40 es: 202500
+Tiempo de addBefore para 40 datos, en segundos: 2.025E-4
+Tiempo en nanosegundos para 40 es: 11600
+Tiempo de find (mitad) para 40 datos, en segundos: 1.16E-5
+Tiempo en nanosegundos para 40 es: 6300
+Tiempo de addBefore (mitad) para 40 datos, en segundos: 6.3E-6
+Tiempo en nanosegundos para 40 es: 7000
+Tiempo de delete (mitad) para 40 datos, en segundos: 7.0E-6
+Tiempo en nanosegundos para 40 es: 187100
+Tiempo de sort para 40 datos, en segundos: 1.871E-4
+---------------------Test con 1000 elementos--------------------------------
+================Singly-Linked List================
+Tiempo en crea lista push back nanosegundos para 40 es: 1619000
+Tiempo de pushBack para 40 datos, en segundos: 0.001619
+Tiempo en nanosegundos para 40 es: 14300
+Tiempo de popBack para 40 datos, en segundos: 1.43E-5
+Tiempo en crear lista push fornt en nanosegundos para 40 es: 734700
+Tiempo de pushFront para 40 datos, en segundos: 7.347E-4
+Tiempo en nanosegundos para 40 es: 172500
+Tiempo de sort para 40 datos, en segundos: 1.725E-4
+Tiempo en nanosegundos para 40 es: 5100
+Tiempo de popFront para 40 datos, en segundos: 5.1E-6
+Tiempo en nanosegundos para 40 es: 577800
+Tiempo de addAfter para 40 datos, en segundos: 5.778E-4
+Tiempo en nanosegundos para 40 es: 585100
+Tiempo de addBefore para 40 datos, en segundos: 5.851E-4
+Tiempo en nanosegundos para 40 es: 7700
+Tiempo de find (mitad) para 40 datos, en segundos: 7.7E-6
+Tiempo en nanosegundos para 40 es: 5200
+Tiempo de addBefore (mitad) para 40 datos, en segundos: 5.2E-6
+Tiempo en nanosegundos para 40 es: 4100
+Tiempo de delete (mitad) para 40 datos, en segundos: 4.1E-6
+---------------------Test con 10000 elementos--------------------------------
+================Singly-Linked List================
+Tiempo en crea lista push back nanosegundos para 400 es: 2481400
+Tiempo de pushBack para 400 datos, en segundos: 0.0024814
+Tiempo en nanosegundos para 400 es: 665900
+Tiempo de popBack para 400 datos, en segundos: 6.659E-4
+Tiempo en crear lista push fornt en nanosegundos para 400 es: 1606900
+Tiempo de pushFront para 400 datos, en segundos: 0.0016069
+Tiempo en nanosegundos para 400 es: 5652700
+Tiempo de sort para 400 datos, en segundos: 0.0056527
+Tiempo en nanosegundos para 400 es: 50300
+Tiempo de popFront para 400 datos, en segundos: 5.03E-5
+Tiempo en nanosegundos para 400 es: 2240000
+Tiempo de addAfter para 400 datos, en segundos: 0.00224
+Tiempo en nanosegundos para 400 es: 2326900
+Tiempo de addBefore para 400 datos, en segundos: 0.0023269
+Tiempo en nanosegundos para 400 es: 40900
+Tiempo de find (mitad) para 400 datos, en segundos: 4.09E-5
+Tiempo en nanosegundos para 400 es: 37600
+Tiempo de addBefore (mitad) para 400 datos, en segundos: 3.76E-5
+Tiempo en nanosegundos para 400 es: 17800
+Tiempo de delete (mitad) para 400 datos, en segundos: 1.78E-5
+---------------------Test con 100000 elementos--------------------------------
+================Singly-Linked List================
+Tiempo en crea lista push back nanosegundos para 4000 es: 19309500
+Tiempo de pushBack para 4000 datos, en segundos: 0.0193095
+Tiempo en nanosegundos para 4000 es: 99520700
+Tiempo de popBack para 4000 datos, en segundos: 0.0995207
+Tiempo en crear lista push fornt en nanosegundos para 4000 es: 9735800
+Tiempo de pushFront para 4000 datos, en segundos: 0.0097358
+Tiempo en nanosegundos para 4000 es: 194377100
+Tiempo de sort para 4000 datos, en segundos: 0.1943771
+Tiempo en nanosegundos para 4000 es: 311300
+Tiempo de popFront para 4000 datos, en segundos: 3.113E-4
+Tiempo en nanosegundos para 4000 es: 10000000
+Tiempo de addAfter para 4000 datos, en segundos: 0.01
+Tiempo en nanosegundos para 4000 es: 9339300
+Tiempo de addBefore para 4000 datos, en segundos: 0.0093393
+Tiempo en nanosegundos para 4000 es: 432500
+Tiempo de find (mitad) para 4000 datos, en segundos: 4.325E-4
+Tiempo en nanosegundos para 4000 es: 255800
+Tiempo de addBefore (mitad) para 4000 datos, en segundos: 2.558E-4
+Tiempo en nanosegundos para 4000 es: 120700
+Tiempo de delete (mitad) para 4000 datos, en segundos: 1.207E-4
+---------------------Test con 1000000 elementos--------------------------------
+================Singly-Linked List================
+Tiempo en crea lista push back nanosegundos para 40000 es: 116247000
+Tiempo de pushBack para 40000 datos, en segundos: 0.116247
+Tiempo en nanosegundos para 40000 es: 12245729900
+Tiempo de popBack para 40000 datos, en segundos: 12.2457299
+Tiempo en crear lista push fornt en nanosegundos para 40000 es: 73752400
+Tiempo de pushFront para 40000 datos, en segundos: 0.0737524
+Tiempo en nanosegundos para 40000 es: 62437202400
+Tiempo de sort para 40000 datos, en segundos: 62.4372024
+Tiempo en nanosegundos para 40000 es: 3243000
+Tiempo de popFront para 40000 datos, en segundos: 0.003243
+Tiempo en nanosegundos para 40000 es: 96640100
+Tiempo de addAfter para 40000 datos, en segundos: 0.0966401
+Tiempo en nanosegundos para 40000 es: 66085800
+Tiempo de addBefore para 40000 datos, en segundos: 0.0660858
+Tiempo en nanosegundos para 40000 es: 3824800
+Tiempo de find (mitad) para 40000 datos, en segundos: 0.0038248
+Tiempo en nanosegundos para 40000 es: 2799300
+Tiempo de addBefore (mitad) para 40000 datos, en segundos: 0.0027993
+Tiempo en nanosegundos para 40000 es: 1476900
+Tiempo de delete (mitad) para 40000 datos, en segundos: 0.0014769
+
+---------------------Test con 13748350 elementos--------------------------------
+================Singly-Linked List================
+Tiempo en crea lista push back nanosegundos para 549934 es: 6747888600
+Tiempo de pushBack para 549934 datos, en segundos: 6.7478886
+Tiempo en nanosegundos para 549934 es: 42154300
+Tiempo de popFront para 549934 datos, en segundos: 0.0421543
+Tiempo en crear lista push fornt en nanosegundos para 549934 es: 4877442600
+Tiempo de pushFront para 549934 datos, en segundos: 4.8774426
+
+
+
+
+---------------------Test con 1000 elementos--------------------------------
+================Doubly-Linked List================
+Tiempo en nanosegundos para 40 es: 1619900
+Tiempo de pushBack para 40 datos, en segundos: 0.0016199
+Tiempo en nanosegundos para 40 es: 7000
+Tiempo de popBack para 40 datos, en segundos: 7.0E-6
+Tiempo en nanosegundos para 40 es: 627700
+Tiempo de pushFront para 40 datos, en segundos: 6.277E-4
+Tiempo en nanosegundos para 40 es: 635500
+Tiempo de addAfter para 40 datos, en segundos: 6.355E-4
+Tiempo en nanosegundos para 40 es: 646600
+Tiempo de addBefore para 40 datos, en segundos: 6.466E-4
+Tiempo en nanosegundos para 40 es: 8300
+Tiempo de find (mitad) para 40 datos, en segundos: 8.3E-6
+Tiempo en nanosegundos para 40 es: 8000
+Tiempo de addBefore (mitad) para 40 datos, en segundos: 8.0E-6
+Tiempo en nanosegundos para 40 es: 3300
+Tiempo de delete (mitad) para 40 datos, en segundos: 3.3E-6
+Tiempo en nanosegundos para 40 es: 97700
+Tiempo de sort para 40 datos, en segundos: 9.77E-5
+---------------------Test con 10000 elementos--------------------------------
+================Doubly-Linked List================
+Tiempo en nanosegundos para 400 es: 2618600
+Tiempo de pushBack para 400 datos, en segundos: 0.0026186
+Tiempo en nanosegundos para 400 es: 35500
+Tiempo de popBack para 400 datos, en segundos: 3.55E-5
+Tiempo en nanosegundos para 400 es: 1735700
+Tiempo de pushFront para 400 datos, en segundos: 0.0017357
+Tiempo en nanosegundos para 400 es: 1911800
+Tiempo de addAfter para 400 datos, en segundos: 0.0019118
+Tiempo en nanosegundos para 400 es: 1950900
+Tiempo de addBefore para 400 datos, en segundos: 0.0019509
+Tiempo en nanosegundos para 400 es: 30100
+Tiempo de find (mitad) para 400 datos, en segundos: 3.01E-5
+Tiempo en nanosegundos para 400 es: 4900
+Tiempo de addBefore (mitad) para 400 datos, en segundos: 4.9E-6
+Tiempo en nanosegundos para 400 es: 17700
+Tiempo de delete (mitad) para 400 datos, en segundos: 1.77E-5
+Tiempo en nanosegundos para 400 es: 4069600
+Tiempo de sort para 400 datos, en segundos: 0.0040696
+---------------------Test con 100000 elementos--------------------------------
+================Doubly-Linked List================
+Tiempo en nanosegundos para 4000 es: 17106000
+Tiempo de pushBack para 4000 datos, en segundos: 0.017106
+Tiempo en nanosegundos para 4000 es: 594000
+Tiempo de popBack para 4000 datos, en segundos: 5.94E-4
+Tiempo en nanosegundos para 4000 es: 9440700
+Tiempo de pushFront para 4000 datos, en segundos: 0.0094407
+Tiempo en nanosegundos para 4000 es: 10132600
+Tiempo de addAfter para 4000 datos, en segundos: 0.0101326
+Tiempo en nanosegundos para 4000 es: 7264400
+Tiempo de addBefore para 4000 datos, en segundos: 0.0072644
+Tiempo en nanosegundos para 4000 es: 696900
+Tiempo de find (mitad) para 4000 datos, en segundos: 6.969E-4
+Tiempo en nanosegundos para 4000 es: 4200
+Tiempo de addBefore (mitad) para 4000 datos, en segundos: 4.2E-6
+Tiempo en nanosegundos para 4000 es: 288500
+Tiempo de delete (mitad) para 4000 datos, en segundos: 2.885E-4
+Tiempo en nanosegundos para 4000 es: 103189000
+Tiempo de sort para 4000 datos, en segundos: 0.103189
+---------------------Test con 1000000 elementos--------------------------------
+================Doubly-Linked List================
+Tiempo en nanosegundos para 40000 es: 113914100
+Tiempo de pushBack para 40000 datos, en segundos: 0.1139141
+Tiempo en nanosegundos para 40000 es: 3347800
+Tiempo de popBack para 40000 datos, en segundos: 0.0033478
+Tiempo en nanosegundos para 40000 es: 101625600
+Tiempo de pushFront para 40000 datos, en segundos: 0.1016256
+Tiempo en nanosegundos para 40000 es: 92043900
+Tiempo de addAfter para 40000 datos, en segundos: 0.0920439
+Tiempo en nanosegundos para 40000 es: 99924600
+Tiempo de addBefore para 40000 datos, en segundos: 0.0999246
+Tiempo en nanosegundos para 40000 es: 3726900
+Tiempo de find (mitad) para 40000 datos, en segundos: 0.0037269
+Tiempo en nanosegundos para 40000 es: 1800
+Tiempo de addBefore (mitad) para 40000 datos, en segundos: 1.8E-6
+Tiempo en nanosegundos para 40000 es: 1319600
+Tiempo de delete (mitad) para 40000 datos, en segundos: 0.0013196
+Tiempo en nanosegundos para 40000 es: 37647077500
+Tiempo de sort para 40000 datos, en segundos: 37.6470775
+---------------------Test con 10000000 elementos--------------------------------
+================Doubly-Linked List================
+Tiempo en nanosegundos para 400000 es: 3396669700
+Tiempo de pushBack para 400000 datos, en segundos: 3.3966697
+Tiempo en nanosegundos para 400000 es: 31687100
+Tiempo de popBack para 400000 datos, en segundos: 0.0316871
+Tiempo en nanosegundos para 400000 es: 2974695500
+Tiempo de pushFront para 400000 datos, en segundos: 2.9746955
+Tiempo en nanosegundos para 400000 es: 3187308100
+Tiempo de addAfter para 400000 datos, en segundos: 3.1873081
+Tiempo en nanosegundos para 400000 es: 1610438800
+Tiempo de addBefore para 400000 datos, en segundos: 1.6104388
+Tiempo en nanosegundos para 400000 es: 20316200
+Tiempo de find (mitad) para 400000 datos, en segundos: 0.0203162
+Tiempo en nanosegundos para 400000 es: 3300
+Tiempo de addBefore (mitad) para 400000 datos, en segundos: 3.3E-6
+Tiempo en nanosegundos para 400000 es: 14061600
+Tiempo de delete (mitad) para 400000 datos, en segundos: 0.0140616
+
+---------------------Test con 13748350 elementos--------------------------------
+================Doubly-Linked List================
+Tiempo en nanosegundos para 549934 es: 7619541100
+Tiempo de pushBack para 549934 datos, en segundos: 7.6195411
+Tiempo en nanosegundos para 549934 es: 44371600
+Tiempo de popBack para 549934 datos, en segundos: 0.0443716
+Tiempo en nanosegundos para 549934 es: 4161974000
+Tiempo de pushFront para 549934 datos, en segundos: 4.161974
+Tiempo en nanosegundos para 549934 es: 2444251100
+Tiempo de addAfter para 549934 datos, en segundos: 2.4442511
+Tiempo en nanosegundos para 549934 es: 1884100800
+Tiempo de addBefore para 549934 datos, en segundos: 1.8841008
+Tiempo en nanosegundos para 549934 es: 26127700
+Tiempo de find (mitad) para 549934 datos, en segundos: 0.0261277
+Tiempo en nanosegundos para 549934 es: 91600
+Tiempo de addBefore (mitad) para 549934 datos, en segundos: 9.16E-5
+Tiempo en nanosegundos para 549934 es: 21020900
+Tiempo de delete (mitad) para 549934 datos, en segundos: 0.0210209

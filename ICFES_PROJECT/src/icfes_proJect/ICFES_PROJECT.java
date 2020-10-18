@@ -60,7 +60,7 @@ public class ICFES_PROJECT {
             }    
         }
         long finish = System.nanoTime();
-        System.out.println("pila Doblemente enlazadaEncontrado en:(nanosegundos) " +  (finish - start) );
+        System.out.println("Busqueda pila Doblemente enlazada. Encontrado en:(nanosegundos) " +  (finish - start) );
         return aux;
     }
     
@@ -108,7 +108,7 @@ public class ICFES_PROJECT {
             }    
         }
         long finish = Instant.now().toEpochMilli();
-        System.out.println("cola doblemente enlazada Encontrado en(milisegundos): " +  (finish - start) );
+        System.out.println("Busqueda cola doblemente enlazada. Encontrado en(milisegundos): " +  (finish - start) );
         return aux;
     }
     
@@ -290,8 +290,8 @@ public class ICFES_PROJECT {
         }
         TFin = System.nanoTime();  //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
         tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
-        System.out.println("pila en arreglo Tiempo de ejecución en nanosegundos: " + tiempo);
-        System.out.println("pila en arreglo Tiempo de ejecución en segundos: " + tiempo/1e9);
+        System.out.println("Busqueda pila en arreglo. Tiempo de ejecución en nanosegundos: " + tiempo);
+        System.out.println("Busqueda pila en arreglo Tiempo de ejecución en segundos: " + tiempo/1e9);
         return compare;
     }
     
@@ -309,6 +309,11 @@ public class ICFES_PROJECT {
         
     }
     
+    static void pasarGarbageColector(){
+        Runtime garbage = Runtime.getRuntime();
+        garbage.gc();
+    }
+    
      public static void main(String[] args) {        
         
         Stack_using_DoublyLinkedList<String[]> stack;
@@ -317,51 +322,103 @@ public class ICFES_PROJECT {
         Queue_using_SinglyLinkedList<String[]> queueSingly;
         Stack_using_arrays stackArray;
         queue_using_arrays queueArray;
-        int[] test = {40,400,4000,40000,400000,549934};
+        int[] test = {549934};//40,400,4000,40000,400000,
         String data = "SB11201820060253";
-        Pruebas p = new Pruebas();
+        Pruebas p = new Pruebas();/*
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
                     + "elementos--------------------------------");
             stack = createStackDoublylinkedList(i);
-            queue = createQueueDoublyLinkedList(i);
-            stackSingly = createStackSinglylinkedList(i);
-            queueSingly = createQueueSinglyLinkedList(i);
-            stackArray = createStackArray(i);
-            queueArray = createQueueArray(i);
-
-            deleteStackDoublyLinkedList(i,stack);
-            deleteQueueDoublylinkedList(i,queue);
-            deleteStackSinglyLinkedList(i,stackSingly);
-            deleteQueueSinglylinkedList(i,queueSingly);
-            deleteQueueArray(queueArray);
-            deleteStackArray(stackArray);
-            ///////////////////////////////////////////////
-            stack = createStackDoublylinkedList(i);
-            queue = createQueueDoublyLinkedList(i);
-            stackSingly = createStackSinglylinkedList(i);
-            queueSingly = createQueueSinglyLinkedList(i);
-            stackArray = createStackArray(i);
-            queueArray = createQueueArray(i);
-            
             findStackDoublyLinkedList(4,data,stack);
-            findQueueDoublyLinkedList(4,data,queue);
-            findStackSinglyLinkedList(4,data,stackSingly);
-            findQueueSinglyLinkedList(4,data,queueSingly);           
-            findStackArray(4,data,stackArray);
-            findQueueArray(4,data,queueArray); 
+            stack = createStackDoublylinkedList(i);
+            deleteStackDoublyLinkedList(i,stack);
+        }    
             
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");    
+            queue = createQueueDoublyLinkedList(i);
+            findQueueDoublyLinkedList(4,data,queue);
+            queue = createQueueDoublyLinkedList(i);
+            deleteQueueDoublylinkedList(i,queue);
+        }
+            
+        pasarGarbageColector();
+            
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");    
+            stackSingly = createStackSinglylinkedList(i);
+            findStackSinglyLinkedList(4,data,stackSingly);
+            stackSingly = createStackSinglylinkedList(i);
+            deleteStackSinglyLinkedList(i,stackSingly);
+        }   
+            
+            
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");    
+            queueSingly = createQueueSinglyLinkedList(i);
+            findQueueSinglyLinkedList(4,data,queueSingly); 
+            queueSingly = createQueueSinglyLinkedList(i);
+            deleteQueueSinglylinkedList(i,queueSingly);
+            
+        }
+        
+        pasarGarbageColector();
+        
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");    
+            stackArray = createStackArray(i);
+            findStackArray(4,data,stackArray);
+            stackArray = null;
+            stackArray = createStackArray(i);
+            deleteStackArray(stackArray);
+        }   
+            
+            
+            
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");    
+            
+            queueArray = createQueueArray(i);
+            findQueueArray(4,data,queueArray);
+            queueArray = null;
+            queueArray = createQueueArray(i);
+            deleteQueueArray(queueArray);
+        }       
+          */  
+         pasarGarbageColector();   
+       
+        SinglyLinkedList list;
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");    
+             
             int numOfLines = i;
             System.out.println("================Singly-Linked List================");
-            p.SinglyPushBack(numOfLines);
-            p.SinglyPopBack(numOfLines);
-            p.SinglyPushFront(numOfLines);
+            list = p.SinglyPushBack(numOfLines);
+            //p.SinglyPopBack(numOfLines,list);
+            p.SinglyPopFront(numOfLines,list);
+            pasarGarbageColector();
+            list = p.SinglyPushFront(numOfLines);
+            p.SinglySort(numOfLines);
             p.SinglyAddAfter(numOfLines);
             p.SinglyAddBefore(numOfLines);
-            p.SinglyFind(numOfLines);
+            p.SinglyFind(numOfLines,data);
             p.SinglyInsertMitad(numOfLines);
             p.SinglyDelete(numOfLines);
-            p.SinglySort(numOfLines);
+            
+        }
+        /*
+        pasarGarbageColector();
+        
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");
+            int numOfLines = i;
             System.out.println("================Doubly-Linked List================");
             p.DoublyPushBack(numOfLines);
             p.DoublyPopBack(numOfLines);
@@ -371,14 +428,11 @@ public class ICFES_PROJECT {
             p.DoublyFind(numOfLines);
             p.DoublyInsertMitad(numOfLines);
             p.DoublyDelete(numOfLines);
-            p.DoublySort(numOfLines);
+            //p.DoublySort(numOfLines);
         }
-        
+        */
        
         //int[] tests = {10, 100, 1000, 10000, 100000, 150000, 200000};
-        for(int i: test) {
-            
-        }
         
         /*
         ////////////////////////////////////////////queue//////////////////////////////////

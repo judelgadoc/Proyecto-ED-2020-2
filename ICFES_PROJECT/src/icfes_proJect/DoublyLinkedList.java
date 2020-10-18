@@ -152,7 +152,8 @@ public class DoublyLinkedList<T> {
             Node node1 = head;
             Node node2 = head.next;
             
-            for(int i = 0;i<size;i++) {  
+            for(int i = 0;i<size;i++) { 
+                boolean swaps = false;
                 while(node2!= null) {
                     String[] temp1 = (String[]) node1.data;
                     String[] temp2 = (String[]) node2.data;
@@ -163,11 +164,15 @@ public class DoublyLinkedList<T> {
                         String[] aux= (String[])node2.data;
                         node2.data = node1.data;
                         node1.data = aux;
-                    }   
+                        swaps = true;
+                    }
                     node1 = node1.next;
                     node2 = node2.next;
                   
                 }
+                if(!swaps){
+                        break;
+                    }
                 node1 = head;
                 node2 = head.next;
           }

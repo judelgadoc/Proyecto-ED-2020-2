@@ -144,6 +144,7 @@ public class SinglyLinkedList<T> {
             Node node2 = head.next;
             
             for(int i = 0;i<size;i++) {  
+                boolean swaps = false;
                 while(node2!= null) {
                     String[] temp1 = (String[]) node1.data;
                     String[] temp2 = (String[]) node2.data;
@@ -159,6 +160,9 @@ public class SinglyLinkedList<T> {
                     node2 = node2.next;
                   
                 }
+                if(!swaps){
+                        break;
+                    }
                 node1 = head;
                 node2 = head.next;
           }
