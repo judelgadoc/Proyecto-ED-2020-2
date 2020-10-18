@@ -324,7 +324,7 @@ public class ICFES_PROJECT {
         queue_using_arrays queueArray;
         int[] test = {549934};//40,400,4000,40000,400000,
         String data = "SB11201820060253";
-        Pruebas p = new Pruebas();/*
+        Pruebas p = new Pruebas();
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
                     + "elementos--------------------------------");
@@ -389,7 +389,7 @@ public class ICFES_PROJECT {
             queueArray = createQueueArray(i);
             deleteQueueArray(queueArray);
         }       
-          */  
+          
          pasarGarbageColector();   
        
         SinglyLinkedList list;
@@ -412,7 +412,7 @@ public class ICFES_PROJECT {
             p.SinglyDelete(numOfLines);
             
         }
-        /*
+        
         pasarGarbageColector();
         
         for(int i: test){
@@ -430,24 +430,8 @@ public class ICFES_PROJECT {
             p.DoublyDelete(numOfLines);
             //p.DoublySort(numOfLines);
         }
-        */
-       
-        //int[] tests = {10, 100, 1000, 10000, 100000, 150000, 200000};
         
-        /*
-        ////////////////////////////////////////////queue//////////////////////////////////
-        Queue_using_DoublyLinkedList<String[]> queue = new Queue_using_DoublyLinkedList();
-        for(int i = 1; i<10; i++){
-            queue.enqueue(bd.returnString());
-        }
-        System.out.println(queue.peek()[7]);
-        System.out.println(queue.isEmpty());
-        System.out.println(Arrays.toString((String[])queue.peek()));
-        System.out.println(queue.size());
-        for(int i = 1; i<10; i++){
-            System.out.println(Arrays.toString((String[])queue.dequeue()));
-        }
-        System.out.println(queue.size());
-        */
+       
+      
     }
 }
