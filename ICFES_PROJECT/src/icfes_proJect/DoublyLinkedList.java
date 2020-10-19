@@ -121,6 +121,32 @@ public class DoublyLinkedList<T> {
         }
         return count;
     }
+    public Node findNodo(int idx, String key) {
+        Node ref = head;
+        boolean foundFlag = false;
+        String[] temp;
+        int count = 0;
+        while (ref.next != null && !foundFlag) {
+            temp = (String[]) ref.data;
+            foundFlag = temp[idx].equals(key);
+            ref = ref.next;
+            count++;
+        }
+        return ref;
+    }
+    public Node findNodoIn(int pos) {
+        Node ref = head;
+        boolean foundFlag = false;
+        String[] temp;
+        int count = 0;
+        while (ref.next != null && !foundFlag) {
+            temp = (String[]) ref.data;
+            foundFlag = count == pos;
+            ref = ref.next;
+            count++;
+        }
+        return ref;
+    }
     public void delete(int position) {
         if (position == 0)
             popFront();

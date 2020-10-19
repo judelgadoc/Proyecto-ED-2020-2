@@ -322,7 +322,7 @@ public class ICFES_PROJECT {
         Queue_using_SinglyLinkedList<String[]> queueSingly;
         Stack_using_arrays stackArray;
         queue_using_arrays queueArray;
-        int[] test = {549934};//40,400,4000,40000,400000,549934
+        int[] test = {400000};//40,400,4000,40000,400000,549934
         String data = "SB11201820060253";
         Pruebas p = new Pruebas();
         /*
@@ -407,16 +407,19 @@ public class ICFES_PROJECT {
             list = null;
             pasarGarbageColector();
             list = p.SinglyPushFront(numOfLines);
-            //p.SinglyAddAfter(numOfLines);//lista, y dato o nodo
-            //p.SinglyAddBefore(numOfLines);//lista y dato o nodo
-            //p.SinglyFind(numOfLines,data);//lista
-            //p.SinglyInsertMitad(numOfLines);//lista y o el dato, o nodo
-            //p.SinglyDelete(numOfLines, list);// lita y el dato a eliminar
+            p.SinglyFind(4, data, list);
+            String[] dataIn = (String[])list.popFront();
+            p.SinglyAddAfter(4, data, list, dataIn);
+            dataIn = (String[])list.popFront();
+            p.SinglyAddBefore(4, data, list, dataIn);
+            dataIn = (String[])list.popFront();
+            p.SinglyInsertMitad(numOfLines, list, dataIn);
+            p.SinglyDelete(numOfLines, list);
             
         }
-        
+        list = null;
         pasarGarbageColector();
-        /*
+        
         DoublyLinkedList list2;
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
@@ -427,15 +430,19 @@ public class ICFES_PROJECT {
             p.DoublyPopBack(numOfLines,list2);
             p.DoublyPopFront(numOfLines, list2);
             p.DoublySort(numOfLines, list2);
+            list2 = null;
             pasarGarbageColector();
             list2 = p.DoublyPushFront(numOfLines);
-            p.DoublyAddAfter(numOfLines);
-            p.DoublyAddBefore(numOfLines);
-            p.DoublyFind(numOfLines,data);
-            p.DoublyInsertMitad(numOfLines);
+            p.DoublyFind(4, data, list2);
+            String[] dataIn = (String[])list2.popFront();
+            p.DoublyAddAfter(4, data, list2, dataIn);
+            dataIn = (String[])list2.popFront();
+            p.DoublyAddBefore(4, data, list2, dataIn);
+            dataIn = (String[])list2.popFront();
+            p.DoublyInsertMitad(numOfLines, list2, dataIn);
             p.DoublyDelete(numOfLines, list2);
         }
-        */
+        
        
       
     }
