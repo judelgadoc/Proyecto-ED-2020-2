@@ -37,6 +37,22 @@ public class paraleer {
             
         }
     }
+    public paraleer(String periodo){
+        this.array = new String[25];
+        try {
+         // Apertura del fichero y creacion de BufferedReader para poder
+         // hacer una lectura comoda (disponer del metodo readLine()).
+         periodo += ".txt";
+         this.archivo = new File (periodo);
+         this.fr = new FileReader (archivo);
+         this.br = new BufferedReader(fr);
+        }catch (Exception e){
+            System.out.println("Error al leer el archivo");
+            
+        }
+    }
+    
+    
     
     public String[] returnString(){
         

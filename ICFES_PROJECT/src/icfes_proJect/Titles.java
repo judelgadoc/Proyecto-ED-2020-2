@@ -13,10 +13,15 @@ public class Titles {
     public Titles() {
         try {
          this.arr = new BufferedReader(new FileReader("Titles_SB11_2018-2.txt")).readLine().split(";");
+         
         }catch (Exception e){
             System.out.println("Error al leer el archivo");
             
         }
+    }
+    
+    public String[] getTitles(){
+        return this.arr;
     }
     public int getIndexOf(String key) {
         int ans = 0;

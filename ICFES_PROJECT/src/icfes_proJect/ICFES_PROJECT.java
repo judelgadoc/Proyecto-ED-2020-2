@@ -322,10 +322,10 @@ public class ICFES_PROJECT {
         Queue_using_SinglyLinkedList<String[]> queueSingly;
         Stack_using_arrays stackArray;
         queue_using_arrays queueArray;
-        int[] test = {400000};//40,400,4000,40000,400000,549934
+        int[] test = {40,400,4000,40000,400000,549934};//
         String data = "SB11201820060253";
         Pruebas p = new Pruebas();
-        /*
+        
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
                     + "elementos--------------------------------");
@@ -334,7 +334,7 @@ public class ICFES_PROJECT {
             stack = createStackDoublylinkedList(i);
             deleteStackDoublyLinkedList(i,stack);
         }    
-            
+        stack = null;   
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
                     + "elementos--------------------------------");    
@@ -343,7 +343,7 @@ public class ICFES_PROJECT {
             queue = createQueueDoublyLinkedList(i);
             deleteQueueDoublylinkedList(i,queue);
         }
-            
+        queue=null;
         pasarGarbageColector();
             
         for(int i: test){
@@ -354,7 +354,7 @@ public class ICFES_PROJECT {
             stackSingly = createStackSinglylinkedList(i);
             deleteStackSinglyLinkedList(i,stackSingly);
         }   
-            
+        stackSingly = null;   
             
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
@@ -365,7 +365,7 @@ public class ICFES_PROJECT {
             deleteQueueSinglylinkedList(i,queueSingly);
             
         }
-        
+        queueSingly = null;
         pasarGarbageColector();
         
         for(int i: test){
@@ -376,9 +376,11 @@ public class ICFES_PROJECT {
             stackArray = null;
             stackArray = createStackArray(i);
             deleteStackArray(stackArray);
-        }   
             
+        }
+        stackArray = null;
             
+        pasarGarbageColector();
             
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
@@ -390,8 +392,7 @@ public class ICFES_PROJECT {
             queueArray = createQueueArray(i);
             deleteQueueArray(queueArray);
         }       
-        */  
-         pasarGarbageColector();   
+        pasarGarbageColector();   
        
         SinglyLinkedList list;
         for(int i: test){
@@ -403,7 +404,6 @@ public class ICFES_PROJECT {
             list = p.SinglyPushBack(numOfLines);
             p.SinglyPopBack(numOfLines,list);
             p.SinglyPopFront(numOfLines, list);
-            p.SinglySort(numOfLines, list);
             list = null;
             pasarGarbageColector();
             list = p.SinglyPushFront(numOfLines);
@@ -411,10 +411,17 @@ public class ICFES_PROJECT {
             String[] dataIn = (String[])list.popFront();
             p.SinglyAddAfter(4, data, list, dataIn);
             dataIn = (String[])list.popFront();
+            pasarGarbageColector();
             p.SinglyAddBefore(4, data, list, dataIn);
             dataIn = (String[])list.popFront();
+            pasarGarbageColector();
             p.SinglyInsertMitad(numOfLines, list, dataIn);
             p.SinglyDelete(numOfLines, list);
+            pasarGarbageColector();
+           
+            p.SinglySort(numOfLines, list);
+           
+            
             
         }
         list = null;
@@ -429,7 +436,6 @@ public class ICFES_PROJECT {
             list2 = p.DoublyPushBack(numOfLines);
             p.DoublyPopBack(numOfLines,list2);
             p.DoublyPopFront(numOfLines, list2);
-            p.DoublySort(numOfLines, list2);
             list2 = null;
             pasarGarbageColector();
             list2 = p.DoublyPushFront(numOfLines);
@@ -441,6 +447,10 @@ public class ICFES_PROJECT {
             dataIn = (String[])list2.popFront();
             p.DoublyInsertMitad(numOfLines, list2, dataIn);
             p.DoublyDelete(numOfLines, list2);
+            //if (i<400000){
+            p.DoublySort(numOfLines, list2);
+            //}
+            
         }
         
        
