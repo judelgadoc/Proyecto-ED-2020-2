@@ -48,3 +48,25 @@ public class Stack_using_arrays<T> {
     }
 }
 
+/**
+ * queue_using_arrays<Integer> queue =new queue_using_arrays<>(10);
+        for (int i=0;i<10;i++){
+                       
+            queue.enqueue(i);
+        }
+        
+        for (int i=0;i<10;i++){
+            System.out.println(queue.dequeue());           
+        }
+               
+        System.out.println("hello");
+         Stack_using_arrays<Integer> stack =new  Stack_using_arrays<>(10);
+        for (int i=0;i<10;i++){
+         
+            stack.push(i);
+        }       
+        for (int i=0;i<10;i++){
+            System.out.println(stack.pop());
+            
+        }
+ */
