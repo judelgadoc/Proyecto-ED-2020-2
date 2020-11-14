@@ -59,6 +59,8 @@ public class frFiltro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        pnFiltro.setBackground(new java.awt.Color(0, 204, 255));
+
         javax.swing.GroupLayout pnFiltroLayout = new javax.swing.GroupLayout(pnFiltro);
         pnFiltro.setLayout(pnFiltroLayout);
         pnFiltroLayout.setHorizontalGroup(
@@ -70,6 +72,7 @@ public class frFiltro extends javax.swing.JFrame {
             .addGap(0, 546, Short.MAX_VALUE)
         );
 
+        btEnviar.setBackground(new java.awt.Color(0, 204, 255));
         btEnviar.setText("Enviar");
         btEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
