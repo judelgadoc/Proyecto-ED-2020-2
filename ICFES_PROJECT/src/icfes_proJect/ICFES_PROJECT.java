@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package icfes_proJect;
+//import MyDynamicArray;
+//import BinarySearchTree;
 import java.io.*;
 import java.math.*;
 import java.text.*;
@@ -322,10 +324,17 @@ public class ICFES_PROJECT {
         Queue_using_SinglyLinkedList<String[]> queueSingly;
         Stack_using_arrays stackArray;
         queue_using_arrays queueArray;
+        MyDynamicArray dinamicArray;
+        BinarySearchTree binaryTree;
+        MinHeap heap;
         int[] test = {40,400,4000,40000,400000,549934};//
         String data = "SB11201820060253";
         Pruebas p = new Pruebas();
+        NuevasPruebas np = new NuevasPruebas();
         
+        
+        
+        /*
         for(int i: test){
             System.out.println("---------------------Test con " + i*25 +" "
                     + "elementos--------------------------------");
@@ -452,8 +461,45 @@ public class ICFES_PROJECT {
             //}
             
         }
-        
+        list2 = null;
+        pasarGarbageColector();
        
+        for (int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");
+            System.out.println("================Dinamic Array================");
+            dinamicArray = np.fillTestArr(i);
+            np.removeTestArr(dinamicArray);
+            np.searchTestArr(dinamicArray, data, 4);
+            np.sortTestArr(dinamicArray,4);
+        }*/
+        dinamicArray = null;
+        pasarGarbageColector();
+        
+        for (int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");
+            System.out.println("================Heap================");
+            heap = np.fillTestHeap(i,4);
+            np.removeTestHeap(heap, 4);
+            String[][] heapString = np.sortTestHeap(heap.getArrayHeap(), 4);        
+        } 
+        
+        /*
+        for(int i: test){
+            System.out.println("---------------------Test con " + i*25 +" "
+                    + "elementos--------------------------------");
+            System.out.println("================Binary Search Tree================");
+            binaryTree = np.fillTestBST(i);
+            binaryTree = np.removeTestBST(binaryTree,data, 4);
+            binaryTree = np.sortTestBST(binaryTree, 4);
+            String data2 = "SB11201820239784";
+            np.searchTestBST(binaryTree,  data2, 4);
+        }
+        
+        binaryTree = null;
+        pasarGarbageColector();
+       */
       
     }
 }

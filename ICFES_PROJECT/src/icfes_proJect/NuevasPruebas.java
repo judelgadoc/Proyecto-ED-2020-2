@@ -1,3 +1,7 @@
+package icfes_proJect;
+import icfes_proJect.paraleer;
+
+
 public class NuevasPruebas {
     public MyDynamicArray fillTestArr(int numOfLines) {
         MyDynamicArray arr = new MyDynamicArray(2);
@@ -87,6 +91,42 @@ public class NuevasPruebas {
         System.out.println(text);
         return bst;
     }
+    public MinHeap fillTestHeap(int numOfLines, int key) {
+        MinHeap heap = new MinHeap(numOfLines);
+        paraleer reader = new paraleer(); 
+        long startTime, stopTime;
+        String text;
+        startTime = System.nanoTime();
+        for (int i = 0; i < numOfLines; i++)
+            heap.insertItem(reader.returnString(),key);
+        stopTime = System.nanoTime();
+        text = String.format("Tiempo de %s, en nanosegundos: %s", "insertItem (full)", stopTime - startTime);
+        System.out.println(text);
+        return heap;
+    }
+    public void removeTestHeap(MinHeap heap, int key) {
+        long startTime, stopTime;
+        String text;
+        startTime = System.nanoTime();
+        String[] popped = heap.removeMin(key);
+        stopTime = System.nanoTime();
+        text = String.format("Tiempo de %s, en nanosegundos: %s", "remove (uno)", stopTime - startTime);
+        System.out.println(text);
+        heap.insertItem(popped,key);
+    }
+    public String[][] sortTestHeap(String[][] array, int key) {
+        long startTime, stopTime;
+        String text;
+        startTime = System.nanoTime();
+        HeapSort hs = new HeapSort();
+        hs.heapSort(array, array.length, key);
+        stopTime = System.nanoTime();
+        text = String.format("Tiempo de %s, en nanosegundos: %s", "HeapSort", stopTime - startTime);
+        System.out.println(text);
+        return array;
+    }
+    
+    
 }
 
 /*

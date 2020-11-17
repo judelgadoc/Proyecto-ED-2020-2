@@ -23,7 +23,7 @@ public class paraleer {
     
     
     
-    paraleer(){
+    public paraleer(){
         this.array = new String[25];
         try {
          // Apertura del fichero y creacion de BufferedReader para poder
