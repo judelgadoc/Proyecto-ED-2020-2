@@ -14,7 +14,7 @@ public class Queue_using_DoublyLinkedList<T> {
     private Node<T> front, rear;
     private int size;
     
-    Queue_using_DoublyLinkedList(){
+    public Queue_using_DoublyLinkedList(){
         queue = new DoublyLinkedList();
         front = rear = null;
         size = 0;

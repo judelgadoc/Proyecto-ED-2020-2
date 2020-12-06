@@ -20,6 +20,16 @@ public class Titles {
         }
     }
     
+    public Titles(String periodo) {
+        try {
+         periodo += "_Titles.txt";
+         this.arr = new BufferedReader(new FileReader(periodo)).readLine().split(";");
+        }catch (Exception e){
+            System.out.println("Error al leer el archivo");
+            
+        }
+    }
+    
     public String[] getTitles(){
         return this.arr;
     }
@@ -37,4 +47,6 @@ public class Titles {
             e2.printStackTrace();
         }
     }
+    
+    
 }

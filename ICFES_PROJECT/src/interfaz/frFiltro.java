@@ -16,6 +16,8 @@ public class frFiltro extends javax.swing.JFrame {
     JCheckBox[] checks;
     FormMain fmain;
     LinkedList<String> titulos = new LinkedList<String>();
+    Titles titles; 
+    String periodo;
     /**
      * Creates new form frFiltro
      */
@@ -23,18 +25,22 @@ public class frFiltro extends javax.swing.JFrame {
         initComponents();
         
     }
-     public frFiltro(int perido,FormMain fmain) {
+     public frFiltro(String periodo,FormMain fmain) {
+        this.periodo = periodo;
+        titles  = new Titles(periodo);
+        this.fmain = fmain;
         initComponents();
         this.cargar();
-        this.fmain = fmain;
+       
+       
         
         
     }
      
     public void cargar (){
-        Titles titles  = new Titles();
+
         String[] tit = titles.getTitles();
-        this.pnFiltro.setLayout(new GridLayout(tit.length/2,2,8,8));
+        this.pnFiltro.setLayout(new GridLayout(tit.length/4,2,8,8));
         checks = new JCheckBox[tit.length]; 
         System.out.print(tit[0]);
         System.out.print(tit.length);
@@ -55,21 +61,34 @@ public class frFiltro extends javax.swing.JFrame {
     private void initComponents() {
 
         pnFiltro = new javax.swing.JPanel();
+        chtodos = new javax.swing.JCheckBox();
         btEnviar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         pnFiltro.setBackground(new java.awt.Color(0, 204, 255));
+
+        chtodos.setText("SELECCIONAR TODOS");
+        chtodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chtodosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnFiltroLayout = new javax.swing.GroupLayout(pnFiltro);
         pnFiltro.setLayout(pnFiltroLayout);
         pnFiltroLayout.setHorizontalGroup(
             pnFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(pnFiltroLayout.createSequentialGroup()
+                .addComponent(chtodos)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnFiltroLayout.setVerticalGroup(
             pnFiltroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 546, Short.MAX_VALUE)
+            .addGroup(pnFiltroLayout.createSequentialGroup()
+                .addComponent(chtodos)
+                .addGap(0, 413, Short.MAX_VALUE))
         );
 
         btEnviar.setBackground(new java.awt.Color(0, 204, 255));
@@ -89,18 +108,18 @@ public class frFiltro extends javax.swing.JFrame {
                 .addComponent(pnFiltro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(167, 167, 167)
+                .addGap(165, 165, 165)
                 .addComponent(btEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(422, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btEnviar)
-                .addGap(27, 27, 27))
+                .addGap(97, 97, 97))
         );
 
         pack();
@@ -116,10 +135,22 @@ public class frFiltro extends javax.swing.JFrame {
         this.setVisible(false);
         fmain.setEnabled(true);
         fmain.setVisibletcontenido(true);
-        fmain.cargarTabla(this.titulos);
-        
+        fmain.cargarTabla(this.titulos, periodo);   
         
     }//GEN-LAST:event_btEnviarActionPerformed
+
+    private void chtodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chtodosActionPerformed
+        if (this.chtodos.isSelected()){
+            for(JCheckBox i: checks){
+                i.setSelected(true);
+            }
+        }else{
+            for(JCheckBox i: checks){
+                i.setSelected(false);
+            }
+        } 
+        
+    }//GEN-LAST:event_chtodosActionPerformed
     public LinkedList getTitulosSeleccionados(){
         return this.titulos;
     }
@@ -161,6 +192,7 @@ public class frFiltro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btEnviar;
+    private javax.swing.JCheckBox chtodos;
     private javax.swing.JPanel pnFiltro;
     // End of variables declaration//GEN-END:variables
 }

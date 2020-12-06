@@ -24,12 +24,12 @@ public class paraleer {
     
     
     public paraleer(){
-        this.array = new String[25];
+        //  this.array = new String[25];
         try {
          // Apertura del fichero y creacion de BufferedReader para poder
          // hacer una lectura comoda (disponer del metodo readLine()).
          
-         this.archivo = new File ("SB11_2018-2.TXT");
+         this.archivo = new File ("2018-2.TXT");
          this.fr = new FileReader (archivo);
          this.br = new BufferedReader(fr);
         }catch (Exception e){
@@ -38,7 +38,7 @@ public class paraleer {
         }
     }
     public paraleer(String periodo){
-        this.array = new String[25];
+        
         try {
          // Apertura del fichero y creacion de BufferedReader para poder
          // hacer una lectura comoda (disponer del metodo readLine()).
