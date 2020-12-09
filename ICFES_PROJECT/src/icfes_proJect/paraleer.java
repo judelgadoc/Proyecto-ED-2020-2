@@ -8,7 +8,7 @@ package icfes_proJect;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -66,6 +66,31 @@ public class paraleer {
         }
         return null;
     }
+    
+     public String[] returnString(LinkedList<String> titSelected, Titles titFull){
+         String linea;
+        try{
+            linea=this.br.readLine(); 
+            String[] auxArray = linea.split(";");
+            int[] auxInd = new int[titSelected.size()];
+            int index = 0;   
+            for (String i: titSelected){
+                //System.out.print(i + " ");
+                auxInd[index++] = titFull.getIndexOf(i);
+            }
+            this.array = new String[titSelected.size()];
+            for (int i =0;i<array.length;i++){
+                array[i]= auxArray[auxInd[i]];
+            }
+            return this.array;
+        }catch(Exception e){
+            System.out.println("returnString(linked,Titles): " + e);
+        }
+        return null;
+     }
+    
+    
+    
     
     public void close(){
         try{                    

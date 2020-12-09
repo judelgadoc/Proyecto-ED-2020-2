@@ -20,9 +20,16 @@ import javax.swing.table.*;
  */
 public class FormMain extends javax.swing.JFrame {
     LinkedList<String> titulos = new LinkedList<String>();
+    LinkedList<RowFilter<Object,Object>> rfs = new LinkedList<RowFilter<Object,Object>>();
     DefaultTableModel modelo = new DefaultTableModel();
     Queue_using_DoublyLinkedList<String[]> queue;
     TableRowSorter trs;
+    RowFilter rf;
+    RowFilter<Object, Object> rf1;
+    Titles titles;
+    int[] filros;
+    //List<RowFilter<Object,Object>> rf;// = snew ArrayList<RowFilter<Object,Object>>(4);
+       
   
     /**
      * Creates new form FormMain
@@ -37,16 +44,19 @@ public class FormMain extends javax.swing.JFrame {
         }catch (Exception e){
             System.out.println("esa imagen no cargo " + archivo.toString() + " " + e );
         }
-        
+        this.filros = new int[4] ;
         lbseleccionar.setVisible(false);
         btSeleccionar.setVisible(false);
         this.jTable1.setVisible(false);
-        this.txBuscar.setVisible(false);
-        this.txBuscar2.setVisible(false);
+        this.lbFiltro.setVisible(false);
         this.cbFiltro1.setVisible(false);
         this.cbFiltro2.setVisible(false);
-        this.lbFiltro.setVisible(false);
-        
+        this.cbFiltro3.setVisible(false);
+        this.cbFiltro4.setVisible(false);
+        this.txBuscar.setVisible(false);
+        this.txBuscar1.setVisible(false);
+        this.txBuscar2.setVisible(false);
+        this.txBuscar3.setVisible(false);
     }
 
     /**
@@ -75,6 +85,10 @@ public class FormMain extends javax.swing.JFrame {
         lbdatos2 = new javax.swing.JLabel();
         cbFiltro1 = new javax.swing.JComboBox<>();
         cbFiltro2 = new javax.swing.JComboBox<>();
+        cbFiltro3 = new javax.swing.JComboBox<>();
+        cbFiltro4 = new javax.swing.JComboBox<>();
+        txBuscar1 = new javax.swing.JTextField();
+        txBuscar3 = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -180,15 +194,84 @@ public class FormMain extends javax.swing.JFrame {
             }
         });
 
+        cbFiltro1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--" }));
+        cbFiltro1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbFiltro1ItemStateChanged(evt);
+            }
+        });
+        cbFiltro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbFiltro1MouseClicked(evt);
+            }
+        });
         cbFiltro1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbFiltro1ActionPerformed(evt);
             }
         });
 
+        cbFiltro2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--" }));
+        cbFiltro2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbFiltro2ItemStateChanged(evt);
+            }
+        });
         cbFiltro2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbFiltro2ActionPerformed(evt);
+            }
+        });
+
+        cbFiltro3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--" }));
+        cbFiltro3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbFiltro3ItemStateChanged(evt);
+            }
+        });
+        cbFiltro3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFiltro3ActionPerformed(evt);
+            }
+        });
+
+        cbFiltro4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--" }));
+        cbFiltro4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbFiltro4ItemStateChanged(evt);
+            }
+        });
+        cbFiltro4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbFiltro4ActionPerformed(evt);
+            }
+        });
+
+        txBuscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txBuscar1ActionPerformed(evt);
+            }
+        });
+        txBuscar1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txBuscar1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txBuscar1KeyTyped(evt);
+            }
+        });
+
+        txBuscar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txBuscar3ActionPerformed(evt);
+            }
+        });
+        txBuscar3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txBuscar3KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txBuscar3KeyTyped(evt);
             }
         });
 
@@ -197,40 +280,49 @@ public class FormMain extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(154, 154, 154))
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(72, 72, 72)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(78, 78, 78)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(cbFiltro1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(124, 124, 124)
+                            .addComponent(txBuscar)
+                            .addComponent(cbFiltro1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbFiltro2, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txBuscar2)
-                            .addComponent(cbFiltro2, 0, 219, Short.MAX_VALUE))
-                        .addGap(181, 181, 181))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbdatos, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbFiltro3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(lbseleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(btSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lbdatos1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbdatos2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txBuscar3)
+                            .addComponent(cbFiltro4, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbdatos, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lbseleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(34, 34, 34)
+                                .addComponent(btSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbdatos2, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbdatos1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(183, 183, 183)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,18 +347,25 @@ public class FormMain extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cbFiltro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(txBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbFiltro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbFiltro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cbFiltro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbFiltro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbFiltro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txBuscar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(24, 24, 24))
         );
 
@@ -293,14 +392,17 @@ public class FormMain extends javax.swing.JFrame {
         for (int i=0;i<titulos.size();i++){
             this.cbFiltro1.addItem((String)titulos.get(i));
             this.cbFiltro2.addItem((String)titulos.get(i));
+            this.cbFiltro3.addItem((String)titulos.get(i));
+            this.cbFiltro4.addItem((String)titulos.get(i));
         }
+        this.cbFiltro1.setSelectedItem("");
     }
     
     private void cargarEstructura(String periodo){
         paraleer leer = new paraleer(periodo);
         this.queue = new Queue_using_DoublyLinkedList<String[]>();
         String[] aux;
-        while((aux = leer.returnString())!= null){
+        while((aux = leer.returnString(titulos,this.titles))!= null){
             //System.out.println(Arrays.toString(aux));
             //queue.enqueue(aux);
             modelo.addRow(aux);
@@ -310,16 +412,16 @@ public class FormMain extends javax.swing.JFrame {
         this.lbdatos.setText("Total Datos Cargados: " + (this.jTable1.getRowCount()*this.titulos.size()));
         
     }
-    public void cargarTabla(LinkedList titulos, String periodo){
+    public void cargarTabla(LinkedList titulos, Titles titles){
         //cargar estructura (titulos)
-        
+        this.titles= titles;
         this.titulos = titulos;
         cargarCbFiltro();
         jTable1.setModel(modelo);
         for (int i=0 ;i<titulos.size();i++){
                 modelo.addColumn((String)titulos.get(i));     
         }
-        cargarEstructura(periodo);
+        cargarEstructura(titles.getPeriodo());
     }
    
     private void btSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSeleccionarActionPerformed
@@ -344,7 +446,9 @@ public class FormMain extends javax.swing.JFrame {
     
     private void txBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txBuscarKeyReleased
         // TODO add your handling code here:
-        trs.setRowFilter(RowFilter.regexFilter("(?)" + this.txBuscar.getText(),0));
+        this.rf = RowFilter.regexFilter("(?)" + this.txBuscar.getText(),(this.filros[0]-1));
+        trs.setRowFilter(rf);
+        this.rfs.add(rf);
         this.lbdatos1.setText("Total registros: " + (this.jTable1.getRowCount()));
 
     }//GEN-LAST:event_txBuscarKeyReleased
@@ -352,6 +456,7 @@ public class FormMain extends javax.swing.JFrame {
     private void txBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txBuscarKeyTyped
         trs = new TableRowSorter(modelo);
         this.jTable1.setRowSorter(trs);
+        
         /*this.txBuscar.addKeyListener(new KeyAdapter(){
             @Override
             public void KeyReleased(KeyEvent ke){
@@ -375,25 +480,154 @@ public class FormMain extends javax.swing.JFrame {
 
     private void txBuscar2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txBuscar2KeyReleased
         // TODO add your handling code here:
-        trs.setRowFilter(RowFilter.regexFilter("(?)" + this.txBuscar2.getText(),3));
+        RowFilter r2 = RowFilter.regexFilter("(?)" + this.txBuscar2.getText(),(this.filros[2]-1));
+        this.rfs.add(r2);
+        //this.rf1 = RowFilter.andFilter(this.rf,r1);
+        //Arrays.asList(RowFilter.regexFilter(lookup,0),RowFilter.regexFilter(lookup, 1)))
+        RowFilter<Object, Object> rf1 = RowFilter.andFilter(rfs);
+        trs.setRowFilter(rf1);
         this.lbdatos1.setText("Total registros: " + (this.jTable1.getRowCount()));
     }//GEN-LAST:event_txBuscar2KeyReleased
 
     private void cbFiltro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFiltro1ActionPerformed
-        // TODO add your handling code here:
+        //cargar combo box, actualizar 
+        System.out.println(this.cbFiltro1.getSelectedItem() + " indice " + this.cbFiltro1.getSelectedIndex());
+        System.out.println(Arrays.toString(this.filros));
+        if(cbFiltro1.getSelectedIndex()==0){
+            this.txBuscar.setEnabled(false);
+            this.filros[0]=0;
+        }else if(enFiltro(this.cbFiltro1.getSelectedIndex())){
+            JOptionPane.showMessageDialog(null,"Ya se encuentra filtrando por " + cbFiltro1.getSelectedItem() ,"Error",JOptionPane.ERROR_MESSAGE);
+            this.cbFiltro1.setSelectedIndex(0);
+        }else{
+            this.filros[0] = (this.cbFiltro1.getSelectedIndex());  
+            this.txBuscar.setEnabled(true);
+        }
+        
     }//GEN-LAST:event_cbFiltro1ActionPerformed
 
     private void cbFiltro2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFiltro2ActionPerformed
-        // TODO add your handling code here:
+         if(cbFiltro2.getSelectedIndex()==0){
+            this.txBuscar1.setEnabled(false);
+            this.filros[1]=0;
+        }else if(enFiltro(this.cbFiltro2.getSelectedIndex())){
+            JOptionPane.showMessageDialog(null,"Ya se encuentra filtrando por este campo","Error",JOptionPane.ERROR_MESSAGE);
+            this.cbFiltro2.setSelectedIndex(0);
+        }else{
+            this.filros[1] = (this.cbFiltro2.getSelectedIndex());     
+            this.txBuscar1.setEnabled(true);
+        }
     }//GEN-LAST:event_cbFiltro2ActionPerformed
+
+    private void cbFiltro3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFiltro3ActionPerformed
+        if(cbFiltro3.getSelectedIndex()==0){
+            this.txBuscar2.setEnabled(false);
+            this.filros[2]=0;
+        }else if(enFiltro(this.cbFiltro3.getSelectedIndex())){
+            JOptionPane.showMessageDialog(null,"Ya se encuentra filtrando por este campo","Error",JOptionPane.ERROR_MESSAGE);
+            this.cbFiltro3.setSelectedIndex(0);
+        }else{
+            this.filros[2] = (this.cbFiltro3.getSelectedIndex());  
+            this.txBuscar2.setEnabled(true);
+        }
+    }//GEN-LAST:event_cbFiltro3ActionPerformed
+
+    private void cbFiltro4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbFiltro4ActionPerformed
+        if(cbFiltro4.getSelectedIndex()==0){
+            this.txBuscar3.setEnabled(false);
+            this.filros[3]=0;
+        }else if(enFiltro(this.cbFiltro4.getSelectedIndex())){
+            JOptionPane.showMessageDialog(null,"Ya se encuentra filtrando por este campo","Error",JOptionPane.ERROR_MESSAGE);
+            this.cbFiltro4.setSelectedIndex(0);
+        }else{
+            this.filros[3] = (this.cbFiltro4.getSelectedIndex());     
+            this.txBuscar3.setEnabled(true);
+        }
+    }//GEN-LAST:event_cbFiltro4ActionPerformed
+
+    private void txBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txBuscar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txBuscar1ActionPerformed
+
+    private void txBuscar1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txBuscar1KeyReleased
+        RowFilter r1 = RowFilter.regexFilter("(?)" + this.txBuscar1.getText(),(this.filros[1]-1));
+        this.rfs.add(r1);
+        //this.rf1 = RowFilter.andFilter(this.rf,r1);
+        //Arrays.asList(RowFilter.regexFilter(lookup,0),RowFilter.regexFilter(lookup, 1)))
+        RowFilter<Object, Object> rf1 = RowFilter.andFilter(rfs);
+        trs.setRowFilter(rf1);
+        this.lbdatos1.setText("Total registros: " + (this.jTable1.getRowCount()));
+        
+        
+    }//GEN-LAST:event_txBuscar1KeyReleased
+
+    private void txBuscar1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txBuscar1KeyTyped
+        trs = new TableRowSorter(modelo);
+        this.jTable1.setRowSorter(trs);
+    }//GEN-LAST:event_txBuscar1KeyTyped
+
+    private void txBuscar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txBuscar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txBuscar3ActionPerformed
+
+    private void txBuscar3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txBuscar3KeyReleased
+        RowFilter r3 = RowFilter.regexFilter("(?)" + this.txBuscar3.getText(),(this.filros[3]-1));
+        this.rfs.add(r3);
+        RowFilter<Object, Object> rf1 = RowFilter.andFilter(rfs);
+        trs.setRowFilter(rf1);
+        this.lbdatos1.setText("Total registros: " + (this.jTable1.getRowCount()));
+    }//GEN-LAST:event_txBuscar3KeyReleased
+
+    private void txBuscar3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txBuscar3KeyTyped
+        trs = new TableRowSorter(modelo);
+        this.jTable1.setRowSorter(trs);
+    }//GEN-LAST:event_txBuscar3KeyTyped
+
+    private void cbFiltro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbFiltro1MouseClicked
+       // System.out.print(this.cbFiltro1.getSelectedItem() + " indice " + this.cbFiltro1.getSelectedIndex());
+    }//GEN-LAST:event_cbFiltro1MouseClicked
+
+    private void cbFiltro1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbFiltro1ItemStateChanged
+        
+    }//GEN-LAST:event_cbFiltro1ItemStateChanged
+
+    private void cbFiltro2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbFiltro2ItemStateChanged
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_cbFiltro2ItemStateChanged
+
+    private void cbFiltro3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbFiltro3ItemStateChanged
+        
+    }//GEN-LAST:event_cbFiltro3ItemStateChanged
+
+    private void cbFiltro4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbFiltro4ItemStateChanged
+        
+    }//GEN-LAST:event_cbFiltro4ItemStateChanged
+    
+    public boolean enFiltro(int n){
+        boolean result = false;
+        for(int i =0; i<4;i++){
+            if (n == this.filros[i]){
+                result = true;
+            }
+        } return result;
+    }
     public void setVisibletcontenido(boolean b){
         if (b){
             this.jTable1.setVisible(true);
-            this.txBuscar.setVisible(true);
-            this.txBuscar2.setVisible(true);
+            this.lbFiltro.setVisible(true);
             this.cbFiltro1.setVisible(true);
             this.cbFiltro2.setVisible(true);
-            this.lbFiltro.setVisible(true);
+            this.cbFiltro3.setVisible(true);
+            this.cbFiltro4.setVisible(true);
+            this.txBuscar.setVisible(true);
+            this.txBuscar1.setVisible(true);
+            this.txBuscar2.setVisible(true);
+            this.txBuscar3.setVisible(true);
+            this.txBuscar.setEnabled(false);
+            this.txBuscar1.setEnabled(false);
+            this.txBuscar2.setEnabled(false);
+            this.txBuscar3.setEnabled(false);
         } 
        
     }
@@ -436,6 +670,8 @@ public class FormMain extends javax.swing.JFrame {
     private javax.swing.JButton btSeleccionar;
     private javax.swing.JComboBox<String> cbFiltro1;
     private javax.swing.JComboBox<String> cbFiltro2;
+    private javax.swing.JComboBox<String> cbFiltro3;
+    private javax.swing.JComboBox<String> cbFiltro4;
     private javax.swing.JComboBox<String> cbPeriodo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -449,6 +685,8 @@ public class FormMain extends javax.swing.JFrame {
     private javax.swing.JLabel lbdatos2;
     private javax.swing.JLabel lbseleccionar;
     private javax.swing.JTextField txBuscar;
+    private javax.swing.JTextField txBuscar1;
     private javax.swing.JTextField txBuscar2;
+    private javax.swing.JTextField txBuscar3;
     // End of variables declaration//GEN-END:variables
 }

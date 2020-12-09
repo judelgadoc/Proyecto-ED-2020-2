@@ -135,7 +135,7 @@ public class frFiltro extends javax.swing.JFrame {
         this.setVisible(false);
         fmain.setEnabled(true);
         fmain.setVisibletcontenido(true);
-        fmain.cargarTabla(this.titulos, periodo);   
+        fmain.cargarTabla(this.titulos, titles);   
         
     }//GEN-LAST:event_btEnviarActionPerformed
 

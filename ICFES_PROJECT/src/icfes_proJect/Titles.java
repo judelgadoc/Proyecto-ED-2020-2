@@ -7,9 +7,9 @@ import java.io.FileReader;
 
 public class Titles {
     private String[] arr;
-    FileReader fr;
-    BufferedReader br;
-
+    private FileReader fr;
+    private BufferedReader br;
+    private String periodo;
     public Titles() {
         try {
          this.arr = new BufferedReader(new FileReader("Titles_SB11_2018-2.txt")).readLine().split(";");
@@ -21,6 +21,7 @@ public class Titles {
     }
     
     public Titles(String periodo) {
+        this.periodo = periodo;
         try {
          periodo += "_Titles.txt";
          this.arr = new BufferedReader(new FileReader(periodo)).readLine().split(";");
@@ -28,6 +29,10 @@ public class Titles {
             System.out.println("Error al leer el archivo");
             
         }
+    }
+
+    public String getPeriodo() {
+        return periodo;
     }
     
     public String[] getTitles(){
